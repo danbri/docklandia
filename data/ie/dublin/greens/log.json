@@ -1,0 +1,334 @@
+{
+ "about": "Build log of the water and trees of Central Dublin (tools/build-place-greens.mjs)",
+ "fetches": {
+  "osm": {
+   "url": [
+    "https://api.openstreetmap.org/api/0.6/map.json?bbox=-6.295166,53.333130,-6.277313,53.338623",
+    "https://api.openstreetmap.org/api/0.6/map.json?bbox=-6.277313,53.333130,-6.259460,53.338623",
+    "https://api.openstreetmap.org/api/0.6/map.json?bbox=-6.295166,53.338623,-6.277313,53.344116",
+    "https://api.openstreetmap.org/api/0.6/map.json?bbox=-6.277313,53.338623,-6.259460,53.344116",
+    "https://api.openstreetmap.org/api/0.6/map.json?bbox=-6.259460,53.333130,-6.223755,53.344116",
+    "https://api.openstreetmap.org/api/0.6/map.json?bbox=-6.295166,53.344116,-6.277313,53.349609",
+    "https://api.openstreetmap.org/api/0.6/map.json?bbox=-6.277313,53.344116,-6.259460,53.349609",
+    "https://api.openstreetmap.org/api/0.6/map.json?bbox=-6.295166,53.349609,-6.277313,53.355103",
+    "https://api.openstreetmap.org/api/0.6/map.json?bbox=-6.277313,53.349609,-6.259460,53.355103",
+    "https://api.openstreetmap.org/api/0.6/map.json?bbox=-6.259460,53.344116,-6.223755,53.355103"
+   ],
+   "fetched": "2026-10-22T12:13:14.666Z",
+   "as_fetched": [
+    {
+     "url": "https://api.openstreetmap.org/api/0.6/map.json?bbox=-6.295166,53.333130,-6.277313,53.338623",
+     "bytes": 4087758,
+     "sha256": "b16f0f8b6bb4a1cfeee2926e5283686a277aa118aa27da87f39cfc10d2d201f1"
+    },
+    {
+     "url": "https://api.openstreetmap.org/api/0.6/map.json?bbox=-6.277313,53.333130,-6.259460,53.338623",
+     "bytes": 5592543,
+     "sha256": "c7ee5ae5806d97af595e6ead00a769c8b2cb92b4caf427c394ba5bbc5d24054a"
+    },
+    {
+     "url": "https://api.openstreetmap.org/api/0.6/map.json?bbox=-6.295166,53.338623,-6.277313,53.344116",
+     "bytes": 3909400,
+     "sha256": "dff884f38a062d06fbfdcd4b0728e7e773f35d83d340c2deb61512e8d701a0e2"
+    },
+    {
+     "url": "https://api.openstreetmap.org/api/0.6/map.json?bbox=-6.277313,53.338623,-6.259460,53.344116",
+     "bytes": 6161275,
+     "sha256": "ee1b79f0c8f1772f55e0b763012262a0f804ec43da04a7479486832aac75923d"
+    },
+    {
+     "url": "https://api.openstreetmap.org/api/0.6/map.json?bbox=-6.259460,53.333130,-6.223755,53.344116",
+     "bytes": 17114085,
+     "sha256": "bcd514aeeab2d5069eaa2919bd5be379095ac90202470b8e31a40966101d2950"
+    },
+    {
+     "url": "https://api.openstreetmap.org/api/0.6/map.json?bbox=-6.295166,53.344116,-6.277313,53.349609",
+     "bytes": 7048956,
+     "sha256": "1de7c9bddefea83a99a489d53891500588410dae72f737ba4933674e8f5f8f39"
+    },
+    {
+     "url": "https://api.openstreetmap.org/api/0.6/map.json?bbox=-6.277313,53.344116,-6.259460,53.349609",
+     "bytes": 9195001,
+     "sha256": "f77062526849467ae482c328382870f890ca4054ba9f2b2db9b6841dd5427ebf"
+    },
+    {
+     "url": "https://api.openstreetmap.org/api/0.6/map.json?bbox=-6.295166,53.349609,-6.277313,53.355103",
+     "bytes": 4523558,
+     "sha256": "5aa67bfb649eba014480e0c6a172edce16405bb105af43c098c609499b9e5184"
+    },
+    {
+     "url": "https://api.openstreetmap.org/api/0.6/map.json?bbox=-6.277313,53.349609,-6.259460,53.355103",
+     "bytes": 5398164,
+     "sha256": "e3f88c5a4007e59d3e9674bbc43170123fb129ab07dd1c5b49b3a5fe06d620b6"
+    },
+    {
+     "url": "https://api.openstreetmap.org/api/0.6/map.json?bbox=-6.259460,53.344116,-6.223755,53.355103",
+     "bytes": 17632549,
+     "sha256": "b8903ca7e3ed343a45f6bd847ac3b08d793fd5c09cbcdf5086810f5666581a2c"
+    }
+   ],
+   "elements": 243290,
+   "latest_element_timestamp": "2026-10-21T19:11:50Z",
+   "sha256": "d1587e5a9f0dfa0f127b6c307618a35cfbb3e741fb919f23c261f90d68b05709",
+   "licence": "ODbL 1.0, © OpenStreetMap contributors"
+  },
+  "relations": {
+   "4423275": {
+    "url": "https://api.openstreetmap.org/api/0.6/relation/4423275/full.json",
+    "fetched": "2026-10-22T12:13:18.924Z",
+    "bytes": 55592,
+    "sha256_as_fetched": "52ba4876c91adfc262b53f3c515d0349f0d0c532678f7b1433ce3960be899f3e"
+   },
+   "8481057": {
+    "url": "https://api.openstreetmap.org/api/0.6/relation/8481057/full.json",
+    "fetched": "2026-10-22T12:13:17.713Z",
+    "bytes": 30534,
+    "sha256_as_fetched": "7bc9e6f13099fa9a1d0c448a65d482732ebdae332d1b5183d59f32a536a6e6fc"
+   },
+   "14389319": {
+    "url": "https://api.openstreetmap.org/api/0.6/relation/14389319/full.json",
+    "fetched": "2026-10-22T12:13:20.053Z",
+    "bytes": 14075,
+    "sha256_as_fetched": "886a5b381cc60c1d76c1bfd91ee68552eb6eca9eaf312d991cc7ebe457f2e0a8"
+   }
+  }
+ },
+ "activities": [
+  {
+   "activity": "8377ac5876341dbf",
+   "operation": "place-greens",
+   "version": 1,
+   "skill": "docklands-3d-page",
+   "tool": "tools/build-place-greens.mjs",
+   "inputs": [
+    {
+     "label": "OSM map.json of the area",
+     "path": "data/raw/places/dublin/greens/osm-map.json.gz",
+     "sha256": "d1587e5a9f0dfa0f127b6c307618a35cfbb3e741fb919f23c261f90d68b05709"
+    },
+    {
+     "label": "OSM relation 14389319 (full)",
+     "path": "data/raw/places/dublin/greens/relation-14389319.json.gz",
+     "sha256": "3fada416cc85f5cf00f71f69f7812cc1e6ba95c50d87c4f9524653494fb55127"
+    },
+    {
+     "label": "OSM relation 4423275 (full)",
+     "path": "data/raw/places/dublin/greens/relation-4423275.json.gz",
+     "sha256": "ecca61113bf9f36bd4346bf359e108cacda18ca1c6cd92214d9d7a175be98de3"
+    },
+    {
+     "label": "OSM relation 8481057 (full)",
+     "path": "data/raw/places/dublin/greens/relation-8481057.json.gz",
+     "sha256": "7a5b25793bc0950588071c45caba3ae55c9345fa7625c4066c7b0385354f43ab"
+    }
+   ],
+   "params": {
+    "area": [
+     -6.295166015625,
+     53.3331298828125,
+     -6.2237548828125,
+     53.3551025390625
+    ],
+    "row_m": 8,
+    "wood_m": 6.5,
+    "park_m": 15,
+    "water_side_m": 25,
+    "mix": {
+     "street": [
+      [
+       "lime",
+       25
+      ],
+      [
+       "plane",
+       20
+      ],
+      [
+       "cherry",
+       12
+      ],
+      [
+       "maple",
+       10
+      ],
+      [
+       "rowan",
+       8
+      ],
+      [
+       "birch",
+       8
+      ],
+      [
+       "whitebeam",
+       7
+      ],
+      [
+       "hornbeam",
+       5
+      ],
+      [
+       "ash",
+       5
+      ]
+     ],
+     "park": [
+      [
+       "beech",
+       15
+      ],
+      [
+       "oak",
+       15
+      ],
+      [
+       "horse-chestnut",
+       12
+      ],
+      [
+       "sycamore",
+       12
+      ],
+      [
+       "lime",
+       10
+      ],
+      [
+       "ash",
+       8
+      ],
+      [
+       "conifer",
+       8
+      ],
+      [
+       "holly",
+       5
+      ],
+      [
+       "birch",
+       5
+      ],
+      [
+       "hawthorn",
+       5
+      ],
+      [
+       "alder",
+       5
+      ]
+     ],
+     "wood": [
+      [
+       "ash",
+       25
+      ],
+      [
+       "oak",
+       20
+      ],
+      [
+       "sycamore",
+       20
+      ],
+      [
+       "beech",
+       15
+      ],
+      [
+       "conifer",
+       10
+      ],
+      [
+       "birch",
+       10
+      ]
+     ],
+     "water": [
+      [
+       "willow",
+       40
+      ],
+      [
+       "alder",
+       35
+      ],
+      [
+       "ash",
+       15
+      ],
+      [
+       "poplar",
+       10
+      ]
+     ]
+    },
+    "about": "trees placed by rule: every wood_m in natural=wood / landuse=forest, every park_m in leisure=park and garden areas with no mapped tree inside (grass and meadow get none), on a grid jittered by a stable hash; never inside a building or water"
+   },
+   "outputs": [
+    {
+     "path": "docklandia:data/ie/dublin/greens/greens.json",
+     "sha256": "21c9cee97e7ec517ed2c80698f512185a819bfd35fca37eb31ab2591137df3b6",
+     "bytes": 584990
+    }
+   ],
+   "counts": {
+    "water_polygons": 36,
+    "trees": 8491,
+    "osm_tree": 5349,
+    "osm_tree_row": 898,
+    "rule_wood": 1846,
+    "rule_park": 398,
+    "skipped_blocked": 35,
+    "by_basis": {
+     "M": 8085,
+     "S": 252,
+     "G": 144,
+     "L": 10
+    },
+    "by_profile": {
+     "ash": 990,
+     "conifer": 202,
+     "lime": 1112,
+     "sycamore": 696,
+     "cherry": 419,
+     "whitebeam": 254,
+     "plane": 726,
+     "hawthorn": 81,
+     "maple": 339,
+     "rowan": 265,
+     "horse-chestnut": 231,
+     "birch": 580,
+     "beech": 586,
+     "holly": 79,
+     "oak": 686,
+     "hornbeam": 196,
+     "alder": 405,
+     "broadleaf": 184,
+     "evergreen": 2,
+     "pear": 10,
+     "willow": 308,
+     "poplar": 76,
+     "locust": 7,
+     "chestnut": 2,
+     "maple-red": 2,
+     "apple": 24,
+     "ginkgo": 2,
+     "beech-copper": 1,
+     "poplar-lombardy": 3,
+     "cherry-wild": 3,
+     "palm": 3,
+     "magnolia": 1,
+     "small": 3,
+     "oak-evergreen": 7,
+     "plum-purple": 1,
+     "pine": 4,
+     "conifer-deciduous": 1
+    },
+    "greens": 680
+   },
+   "ms": 2565,
+   "at": "2026-10-22T12:13:22.619Z"
+  }
+ ]
+}
