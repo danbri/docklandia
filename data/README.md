@@ -7,4 +7,4 @@ licences, hashes) written by the londat tool that built it. `world/` holds sets 
 
 | set | what | size | README |
 |---|---|---|---|
-| gb/uk-lite/ | the UK outside Greater London as a lite building set: 82,784 landmarks (own outline, id, card) plus the merged mass of 22.7 M buildings (one box a square); 3D Tiles 1.1, built by londat cwplans/tools/build-place-tiles.mjs --region uk-lite | 146 MB | [gb/uk-lite/README.md](gb/uk-lite/README.md) |
+| gb/uk-lite/ | the UK outside Greater London as a lite building set: 82,784 landmarks (own outline, id, card); the other 22.7 M buildings each as its own box at its true position at the leaves (footprint area, orientation, height; compact layout cwplans-boxes-1), merged squares at the coarse levels; 3D Tiles 1.1, built by londat cwplans/tools/build-place-tiles.mjs --region uk-lite | 293 MB | [gb/uk-lite/README.md](gb/uk-lite/README.md) |
