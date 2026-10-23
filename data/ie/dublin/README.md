@@ -10,6 +10,11 @@ This README is generated from `provenance/log.json` and [cwplans/data-register.j
 - The Spire and O'Connell Street (600 m): https://danbri.github.io/londat/docklands/?ll=53.34980,-6.26031,600&ht=200,65
 - Poolbeg chimneys (2 km): https://danbri.github.io/londat/docklands/?ll=53.3405,-6.1895,2000&ht=270,60
 - Live view: https://danbri.github.io/londat/docklands/?ll=53.34725,-6.25916,1500&ht=0,55
+- The Liffey core (1.5 km): https://danbri.github.io/londat/docklands/?ll=53.34725,-6.25916,1500&ht=0,55
+- The city (20 km): https://danbri.github.io/londat/docklands/?ll=53.34725,-6.25916,20000&ht=0,45
+- Dublin Bay (40 km): https://danbri.github.io/londat/docklands/?ll=53.30,-6.10,40000&ht=300,50
+- The Spire and O'Connell Street (600 m): https://danbri.github.io/londat/docklands/?ll=53.34980,-6.26031,600&ht=200,65
+- Poolbeg chimneys (2 km): https://danbri.github.io/londat/docklands/?ll=53.3405,-6.1895,2000&ht=270,60
 - The city (8 km out): https://danbri.github.io/londat/docklands/?ll=53.34725,-6.25916,8000&ht=0,50
 - The surroundings (30 km out): https://danbri.github.io/londat/docklands/?ll=53.34725,-6.25916,30000&ht=0,45
 - Area (WGS84 degrees, west, south, east, north): -6.295166015625, 53.3331298828125, -6.2237548828125, 53.3551025390625; 23277 buildings; built 2026-10-22T12:12:16.829Z
@@ -1596,12 +1601,12 @@ This README is generated from `provenance/log.json` and [cwplans/data-register.j
 | [tiles/10-991-815.glb](https://github.com/danbri/docklandia/blob/main/data/ie/dublin/tiles/10-991-815.glb) | glTF 2.0 tile of the city or the surroundings: terrain grid with a JPEG texture (land cover, water, roads, rail), city blocks (KHR_mesh_quantization, EXT_mesh_gpu_instancing) | 12352 | `a4e797cabc705467611e0531d78e98edad7a0251af5ceef507b1efbcc4b0adff` |
 | [tiles/10-991-816.glb](https://github.com/danbri/docklandia/blob/main/data/ie/dublin/tiles/10-991-816.glb) | glTF 2.0 tile of the city or the surroundings: terrain grid with a JPEG texture (land cover, water, roads, rail), city blocks (KHR_mesh_quantization, EXT_mesh_gpu_instancing) | 12308 | `03a631a3d459b68c6a91895fd1cd62215c16951b7ec14e8f928a4f8710043da1` |
 | [tiles/10-991-817.glb](https://github.com/danbri/docklandia/blob/main/data/ie/dublin/tiles/10-991-817.glb) | glTF 2.0 tile of the city or the surroundings: terrain grid with a JPEG texture (land cover, water, roads, rail), city blocks (KHR_mesh_quantization, EXT_mesh_gpu_instancing) | 11964 | `e0378a08e905aa021d335d3f50c4a0fbe1c68fca3eacca4bd7c9be539a066a48` |
-| [tileset.json](https://github.com/danbri/docklandia/blob/main/data/ie/dublin/tileset.json) | 3D Tiles 1.1 tileset: a quadtree with REPLACE refinement (surroundings, city, core), ENU transforms relative to the parent, region bounding volumes, geometric errors | 706181 | `5244ef9a46f04b75efd78afa7045b91e4716751be6538ca2242d85706dbe0d9e` |
+| [tileset.json](https://github.com/danbri/docklandia/blob/main/data/ie/dublin/tileset.json) | 3D Tiles 1.1 tileset: a quadtree with REPLACE refinement (surroundings, city, core), ENU transforms relative to the parent, region bounding volumes, geometric errors | 706181 | `6fc46b67b199b07656eb9e5517e2a10e47c006bf863e0789c0a7c87af71333e7` |
 | [surround.json](https://github.com/danbri/docklandia/blob/main/data/ie/dublin/surround.json) | the text and machine interface of the city and the surroundings: ground grid, place names and peaks, rivers, roads, tiers, per-tile counts | 222756 | `6c04e7d276869a55ec998f5f53c60f0933ed602de9cf9d141c164f10b046bd13` |
 | [sources/ghsl-built-h.json](https://github.com/danbri/docklandia/blob/main/data/ie/dublin/sources/ghsl-built-h.json) | committed source extract (input of an operation; see Sources) | 463415 | `1b09e4a5a9825848c209d3885cffe62287c1d17e0e526567a736967960ab0b58` |
 | [sources/ms-buildings.json](https://github.com/danbri/docklandia/blob/main/data/ie/dublin/sources/ms-buildings.json) | committed source extract (input of an operation; see Sources) | 2086126 | `b5ced2c7185df275cf866bfe705498d97e7d47dbc281533bc14470da09c23d16` |
 | [sources/overture-buildings.json](https://github.com/danbri/docklandia/blob/main/data/ie/dublin/sources/overture-buildings.json) | committed source extract (input of an operation; see Sources) | 1100908 | `a384fcf1cdf274c7647b7cc4c9cd3e024db55ef59a2441dfe0f8c704ee4cec53` |
-| [provenance/log.json](https://github.com/danbri/docklandia/blob/main/data/ie/dublin/provenance/log.json) | fetch records and dataflow activities (inputs and outputs by SHA-256), height-source and roof counts | 619617 | `1dd19fafa8343576b9682f6f272684c5a9f43205877c378a348fadd5221ebb60` |
+| [provenance/log.json](https://github.com/danbri/docklandia/blob/main/data/ie/dublin/provenance/log.json) | fetch records and dataflow activities (inputs and outputs by SHA-256), height-source and roof counts | 620414 | `d00a815421906873f44ea93a5d899044dc64e7b4256901b15a6cdd656cd1b1c4` |
 
 Total 104.07 MB (README.md not counted).
 

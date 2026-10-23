@@ -3,6 +3,10 @@
 Made by [cwplans/tools/build-place-tiles.mjs](https://github.com/danbri/londat/blob/main/cwplans/tools/build-place-tiles.mjs) for the region config [docklands/geo/regions/berlin.js](https://github.com/danbri/londat/blob/main/docklands/geo/regions/berlin.js); drawn by the globe of the Three.js port ([docklands/globe/places.js](https://github.com/danbri/londat/blob/main/docklands/globe/places.js)).
 This README is generated from `provenance/log.json` and [cwplans/data-register.json](https://github.com/danbri/londat/blob/main/cwplans/data-register.json) by `node cwplans/tools/build-place-tiles.mjs readme --region berlin` (also at the end of each build). Do not edit it by hand.
 
+- Files served from https://danbri.github.io/docklandia/data/de/berlin/ (repository https://github.com/danbri/docklandia, folder `data/de/berlin/`); the index entry is in londat's [cwplans/docklands/data/places/index.json](https://github.com/danbri/londat/blob/main/cwplans/docklands/data/places/index.json)
+- Mitte (1.5 km): https://danbri.github.io/londat/docklands/?ll=52.5170,13.3940,1500&ht=80,55
+- Berlin (20 km): https://danbri.github.io/londat/docklands/?ll=52.5100,13.4000,20000&ht=0,45
+- Reichstag and Brandenburger Tor (600 m): https://danbri.github.io/londat/docklands/?ll=52.5170,13.3780,600&ht=20,60
 - Live view: https://danbri.github.io/londat/docklands/?ll=52.51627,13.3777,1500&ht=0,55
 - Mitte (1.5 km): https://danbri.github.io/londat/docklands/?ll=52.5170,13.3940,1500&ht=80,55
 - Berlin (20 km): https://danbri.github.io/londat/docklands/?ll=52.5100,13.4000,20000&ht=0,45
@@ -3149,14 +3153,14 @@ This README is generated from `provenance/log.json` and [cwplans/data-register.j
 | [tiles/10-1103-810.glb](https://github.com/danbri/docklandia/blob/main/data/de/berlin/tiles/10-1103-810.glb) | glTF 2.0 tile of the city or the surroundings: terrain grid with a JPEG texture (land cover, water, roads, rail), city blocks (KHR_mesh_quantization, EXT_mesh_gpu_instancing) | 23920 | `562557bdbd9397d6a50aa0990a8a76a11ebf664ed52cf5214826e85e35fa6bc9` |
 | [tiles/10-1103-811.glb](https://github.com/danbri/docklandia/blob/main/data/de/berlin/tiles/10-1103-811.glb) | glTF 2.0 tile of the city or the surroundings: terrain grid with a JPEG texture (land cover, water, roads, rail), city blocks (KHR_mesh_quantization, EXT_mesh_gpu_instancing) | 24092 | `a941d73fdccda9672c818edaff2f87fb0bd8f097e13d7942b55176c8c7fd8e40` |
 | [tiles/10-1103-812.glb](https://github.com/danbri/docklandia/blob/main/data/de/berlin/tiles/10-1103-812.glb) | glTF 2.0 tile of the city or the surroundings: terrain grid with a JPEG texture (land cover, water, roads, rail), city blocks (KHR_mesh_quantization, EXT_mesh_gpu_instancing) | 24912 | `bf19c3b050116f88236ba5c658b4aa06c3a09b398355f52c8c43383ab520af13` |
-| [tileset.json](https://github.com/danbri/docklandia/blob/main/data/de/berlin/tileset.json) | 3D Tiles 1.1 tileset: a quadtree with REPLACE refinement (surroundings, city, core), ENU transforms relative to the parent, region bounding volumes, geometric errors | 1396429 | `9a90db5d6e4595706662d3e3cc6ed3335ab86b1a29666a1dbb8efa2e39522b43` |
+| [tileset.json](https://github.com/danbri/docklandia/blob/main/data/de/berlin/tileset.json) | 3D Tiles 1.1 tileset: a quadtree with REPLACE refinement (surroundings, city, core), ENU transforms relative to the parent, region bounding volumes, geometric errors | 1396429 | `14e1bb9df43b536efa47d35f1e875fc04fd5b58d07c60ded3f31d8e7f29ae78c` |
 | [surround.json](https://github.com/danbri/docklandia/blob/main/data/de/berlin/surround.json) | the text and machine interface of the city and the surroundings: ground grid, place names and peaks, rivers, roads, tiers, per-tile counts | 390010 | `29a312f7ec8c121d8f8f78a44e33e1fab68f3b477f87b0b95318e2e023d68806` |
 | [sources/ghsl-built-h.json](https://github.com/danbri/docklandia/blob/main/data/de/berlin/sources/ghsl-built-h.json) | committed source extract (input of an operation; see Sources) | 1073189 | `7832d15bcab614380270bc090294dde835fe51758240d43677cea6965714eef0` |
 | [sources/ms-buildings.json](https://github.com/danbri/docklandia/blob/main/data/de/berlin/sources/ms-buildings.json) | committed source extract (input of an operation; see Sources) | 532518 | `9558a7593c19e0e133e04404553341f78422f7d6361e341e69ad1b2d87d36690` |
 | [sources/overture-buildings.json](https://github.com/danbri/docklandia/blob/main/data/de/berlin/sources/overture-buildings.json) | committed source extract (input of an operation; see Sources) | 345600 | `3c926b66ddbb17472f95887e590fa269c3c2c7825d88edda2d82749c5258e514` |
-| [provenance/log.json](https://github.com/danbri/docklandia/blob/main/data/de/berlin/provenance/log.json) | fetch records and dataflow activities (inputs and outputs by SHA-256), height-source and roof counts | 784455 | `c8037a6e22cf8df47161a03da627bdc3c96ecda2225ee1c12412a9f025d72aa0` |
+| [provenance/log.json](https://github.com/danbri/docklandia/blob/main/data/de/berlin/provenance/log.json) | fetch records and dataflow activities (inputs and outputs by SHA-256), height-source and roof counts | 785257 | `796ce64a29b2672ccf39e532d3eefcc24c40046ba031e6d1d4356e98758672d4` |
 
-Total 191.05 MB (README.md not counted).
+Total 191.06 MB (README.md not counted).
 
 ## Sources
 

@@ -4841,6 +4841,41 @@
    ],
    "ms": 116560,
    "at": "2026-10-22T12:15:02.633Z"
+  },
+  {
+   "activity": "666ec9ed437af6ef",
+   "operation": "place-far-lod",
+   "version": 1,
+   "skill": "docklands-3d-page",
+   "tool": "tools/build-place-tiles.mjs",
+   "inputs": [
+    {
+     "label": "tileset (as built by place-lod)",
+     "path": "docklandia:data/de/stuttgart/tileset.json",
+     "sha256": "9f0cd44c33430cf93d9c2578e042c70a838929b309ba259603f48190d5777889"
+    }
+   ],
+   "params": {
+    "city": [
+     9.039,
+     48.692,
+     9.316,
+     48.866
+    ],
+    "block_level": 13,
+    "from_m": 25000,
+    "sse_px": 24,
+    "k_px": 731
+   },
+   "outputs": [
+    {
+     "path": "docklandia:data/de/stuttgart/tileset.json",
+     "sha256": "75bb2578e3ccb26e056b453aeb1e3d7c0813d9618fca94b2a5e459eb10ee61e9",
+     "bytes": 359601
+    }
+   ],
+   "ms": 11,
+   "at": "2026-10-23T11:09:46.042Z"
   }
  ],
  "height_sources": {
