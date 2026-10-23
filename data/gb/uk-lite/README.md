@@ -23,19 +23,37 @@ A building whose outline comes from OpenStreetMap (via Overture) is a landmark w
 
 The OSM tags of rules 1 and 2 come from one SPARQL query of the QLever OSM endpoint (planet of 2026-09-21; the buildings that the UK relation 62149 contains), joined to the Overture record by its OSM id. A landmark by the rule whose outline is not in the slim answer (geometry is fetched only for named, tall, big or notable-class records) is merged into the mass and counted. Microsoft footprints have no names or tags, so they are never landmarks. Buildings under 20 m2 are left out.
 
-Landmarks: 82,784. By reason: wikidata 63,193, named-big 15,148, kind 1,384, named-tall 1,513, man_made 1,067, historic 292, wikipedia 151, leisure 36.
+Landmarks: 83,428. By reason: wikidata 63,193, named-big 15,148, kind 1,384, named-tall 1,513, man_made 1,067, historic 292, wikipedia 151, leisure 36.
 
 ## Landmark heights (towers and spires)
 
 Owner, 2026-10-22, to "should I improve the landmark heights next, with OSM spire and tower parts or the heights in Wikidata?": "Yes do that". Operation `place-lite-landmark-heights` ([place-lite-heights.mjs](https://github.com/danbri/londat/blob/main/cwplans/tools/place-lite-heights.mjs)). The body of a landmark (its own outline) keeps its height (often a Microsoft roof height or the GHSL cell mean: fault F55). Above it:
 
-1. **OSM building parts** (`building:part` with a `height`, via the Overture building_part theme, joined to the landmark by its Overture building id): every part whose top is at least max(3 m, 15 % of the body) above the body is drawn as its own block (its outline, from the ground to its top), at most 64 a landmark, with the landmark's id and card.
-2. **Wikidata height** (P2048 of the landmark's OSM `wikidata` item; CC0; statements with an end time or of deprecated rank left out, preferred statements first, then the greatest; feet converted): when it is at least max(3 m, 15 %) above the highest top so far and at most 330 m, a spire is drawn on the tallest part (a square of 0.35 x the square root of its area), else a square tower at the landmark's centroid (side 0.2 x the square root of the footprint, 4 to 15 m). The tower's place is a rule, not a survey.
+1. **OSM building parts** (`building:part` with a `height`, via the Overture building_part theme, joined to the landmark by its Overture building id): every part whose top is at least max(3 m, 15 % of the body) above the body is drawn as its own block with the landmark's id and card, at most 64 a landmark. **By its shape** (place-lite-landmark-heights 2, 2026-10-23, issue #14: before, every part was a straight column from the ground): its walls start at its `min_height` when the body or a part already standing under it (boxes meeting, top within 1 m) holds it up, else at the ground; a part with a pointed roof (`roof:shape` pyramidal, cone, conical, spire; `building:part=spire`) ends in a pyramid or cone to one apex over its centroid (an octagonal outline gives an octagonal spire), a dome or onion roof in that cap (the profiles of the landmark sets, [roof-caps.mjs](https://github.com/danbri/londat/blob/main/cwplans/tools/roof-caps.mjs)); the cap is `roof:height` high, the whole part for `building:part=spire`, else min(0.25 x its height, 8 m). The OSM `roof:shape` and `building:part` of the parts come from one QLever query (Overture's schema has no cone and no part kind) and win over Overture's `roof_shape`.
+2. **Wikidata height** (P2048 of the landmark's OSM `wikidata` item; CC0; statements with an end time or of deprecated rank left out, preferred statements first, then the greatest; feet converted): when it is at least max(3 m, 15 %) above the highest top so far and at most 330 m, a spire is drawn on the tallest part (a square pyramid of 0.35 x the square root of its area, from the part's top), else a square tower at the landmark's centroid (side 0.2 x the square root of the footprint, 4 to 15 m). The tower's place is a rule, not a survey.
 3. The card gives the body height and the highest point with its source; describeView names the tallest landmark by its highest point.
 
-Counts: landmarks 82,784; with building parts (any height) 695; with parts above the body (drawn) 490; parts drawn 2,700; with a Wikidata height 197; Wikidata spire on a part 2; Wikidata tower at the centroid 88; Wikidata height not used (not above the top, or over the limit) 107.
+Counts: landmarks 82,784; with building parts (any height) 695; with parts above the body (drawn) 490; parts drawn 2,700; parts drawn with a pointed cap (spire or pyramid) 445; parts drawn with a dome 118; parts drawn with an onion 16; parts drawn from their min_height (held up) 599; with a Wikidata height 197; Wikidata spire on a part 2; Wikidata tower at the centroid 88; Wikidata height not used (not above the top, or over the limit) 107.
 
 Highest point by source: ms 41,980, ghsl 28,040, osm-levels 9,882, osm-height 1,462, default 755, osm-part 488, wikidata 90, default-small 87.
+
+Known landmarks against a published height (within 10 % is the target of issue #14):
+
+| landmark | highest point drawn | its source | reference | difference |
+|---|---|---|---|---|
+| Salisbury Cathedral | 123 m | osm-part | 123 m (spire, Wikidata P2048) | +0 % |
+| Lincoln Cathedral | 80 m | osm-part | 83 m (central tower, Wikidata P2048 (preferred)) | -3.6 % |
+| York Minster | 63 m | osm-part | 72 m (central tower, published figure; no Wikidata P2048, and OSM maps the central tower part at 54 m with a flat roof: the 63 m drawn are the west towers' pinnacles (an OSM fault, listed, not patched)) | -12.5 % |
+| Durham Cathedral | 66 m | osm-part | 66 m (central tower, Wikidata P2048) | +0 % |
+| Liverpool Cathedral | 100 m | osm-part | 101 m (tower) | -1 % |
+| Blackpool Tower | 158 m | osm-height | 158 m (tower) | +0 % |
+| Angel of the North | 20 m | wikidata | 20 m (sculpture, Wikidata P2048) | +0 % |
+
+## Structures that are not OSM buildings
+
+Operation `place-lite-structures` (issue #14; [place-lite-heights.mjs](https://github.com/danbri/londat/blob/main/cwplans/tools/place-lite-heights.mjs) `structureRows`): an OSM element that is not tagged `building` and is of a listed kind (`man_made` tower, chimney, obelisk, lighthouse, mast, monument; `historic` monument, memorial, castle; `tourism` artwork) is a landmark when it has a `wikidata` or `wikipedia` tag, or a name and an OSM height of 25 m or more. Its height is the OSM `height`, else the Wikidata P2048 of its item; it is drawn when that is 10 m or more: its OSM outline (an area), else a shape at its node by kind (a square or a 12-sided body, half width a share of the height; an obelisk ends in a point). A castle area that is not a building (`historic=castle` with `wikidata`, such as Edinburgh Castle) is a **site**: a row for search and the card, not drawn (its buildings are drawn as themselves). One QLever query (positions as WKT) and one Wikidata query for the heights; each structure belongs to the part whose polygon holds it (London's are left to London).
+
+Counts: a landmark by the rule but no height (OSM or Wikidata): not drawn 3,581; castle sites (search and card, not drawn) 319; height from osm-height 253; not a landmark by the rule 144; height from wikidata 109; under 10 m: not drawn 105; drawn: man_made=lighthouse 104; drawn: man_made=tower 100; drawn: man_made=mast 98; outside every UK polygon 25; drawn: man_made=chimney 20; drawn: tourism=artwork 13; in London (left to that place) 12; drawn: historic=monument 11; drawn: historic=memorial 9; no geometry 8; drawn: man_made=obelisk 5; drawn: man_made=monument 1; drawn: man_made=column 1. Rows: 644 (of them sites 315).
 
 ## Views (live after the merge)
 
@@ -45,31 +63,34 @@ Highest point by source: ms 41,980, ghsl 28,040, osm-levels 9,882, osm-height 1,
 - Durham Cathedral (700 m): https://danbri.github.io/londat/docklands/?ll=54.7735,-1.5765,700&ht=200,60
 - York Minster (700 m): https://danbri.github.io/londat/docklands/?ll=53.9623,-1.0819,700&ht=200,60
 - York from 1.1 km (one box a building): https://danbri.github.io/londat/docklands/?ll=53.9620,-1.0793,1100&ht=0,60
-- Salisbury Cathedral (700 m; spire 123 m from OSM parts): https://danbri.github.io/londat/docklands/?ll=51.0651,-1.7973,700&ht=200,60
+- Salisbury Cathedral (700 m; spire 123 m from OSM parts, drawn as a spire since 2026-10-23): https://danbri.github.io/londat/docklands/?ll=51.0651,-1.7973,700&ht=200,60
+- Lincoln Cathedral (700 m): https://danbri.github.io/londat/docklands/?ll=53.2343,-0.5361,700&ht=200,60
+- The Angel of the North (400 m; a structure, not an OSM building): https://danbri.github.io/londat/docklands/?ll=54.9141,-1.5897,400&ht=200,70
+- Manchester from 50 km (far forms): https://danbri.github.io/londat/docklands/?ll=53.4794,-2.2453,50000&ht=0,45
 
 ## Files and sizes
 
 | path | what | files | bytes | SHA-256 |
 |---|---|---|---|---|
-| tileset.json | the root: levels 7 and 8, ENU transforms relative to the parent, region bounding volumes, geometric errors; the level-8 tiles refer to their external tile sets | 1 | 97350 | `bf65da86aaee4f20349ab899f696f7d4ed94ac2dad1ec127d74d0b2f7750ed18` |
-| tilesets/ | one external tileset per level-8 cell (levels 9 to 11; content URIs relative to it) | 133 | 2787459 | `052e0493a57906b3d0ea7f39af3ac3397ce053c1d5df8ad713603ee0bcca19ea` (list of names and SHA-256) |
-| tiles/ | glTF 2.0 tiles: landmark outlines with COLOR_0 and _FEATURE_ID_0 (EXT_mesh_features), landmark boxes as EXT_mesh_gpu_instancing instances of one unit box, KHR_mesh_quantization; the buildings' boxes (leaves) and the merged squares (coarse levels) in the compact layout cwplans-boxes-1 (extras.blocks.compact); glb extras.blocks: class, height (dm), height source, landmark row (boxes.f), landmark rows drawn as outlines (named), buildings the merged squares stand for | 7054 | 306146632 | `99fee6a1d43ece6cb8a7ea47d9d7571511ad591c0ad04a5253b900addb1c6910` (list of names and SHA-256) |
-| features/ | the landmarks, one shard a part (rows offset .. offset + count - 1 of the tiles' feature ids): OSM id, name, kind, position, height and its source, leaf tile, ground, Wikidata, the rule that made it a landmark, Wikipedia; read by the page for the parts in view | 11 | 10853303 | `d3fba785fbc2292d2e562c42f6547c75e898fea125f1dffd3e428a8dbadb5cbd` (list of names and SHA-256) |
-| features.json | the text and machine interface of the set: the parts and their shards, the landmark rule, sizes by level and class, the credit | 1 | 9600 | `da26698cd1a1e69b420ac0b7bde5c1e19e38a2e27b116dd08e6f4bfdde0675b4` |
-| names.json | the named landmarks for search (name, position, row); read on the first search | 1 | 2763878 | `cc837f6fea82ceb1481593e609be7af26ae90bf8d0524382c5c6b0c525094ae1` |
-| provenance/log.json | fetch records and dataflow activities (inputs and outputs by SHA-256), counts per part | 1 | 1414436 | `5301c1ff1b9ba11b3fedd2091aa1dcfa194eabb7302cc493214d462928254a30` |
+| tileset.json | the root: levels 7 and 8, ENU transforms relative to the parent, region bounding volumes, geometric errors; the level-8 tiles refer to their external tile sets | 1 | 97350 | `bf961a43811e86a69366ac28df13bac1b43c585cae49fa528b7565569b470631` |
+| tilesets/ | one external tileset per level-8 cell (levels 9 to 11; content URIs relative to it) | 133 | 2787864 | `34b3a573e75ceb270c31e064fe1455da12200f101789a4bcddabcb16f221fa96` (list of names and SHA-256) |
+| tiles/ | glTF 2.0 tiles: landmark outlines with COLOR_0 and _FEATURE_ID_0 (EXT_mesh_features), landmark boxes as EXT_mesh_gpu_instancing instances of one unit box, KHR_mesh_quantization; the buildings' boxes (leaves) and the merged squares (coarse levels) in the compact layout cwplans-boxes-1 (extras.blocks.compact); glb extras.blocks: class, height (dm), height source, landmark row (boxes.f), landmark rows drawn as outlines (named), buildings the merged squares stand for | 7055 | 306511548 | `d2ba7724b7c5f758363e9bc2fd2309fda453eea48fe4953033a4306f728cdf76` (list of names and SHA-256) |
+| features/ | the landmarks, one shard a part (rows offset .. offset + count - 1 of the tiles' feature ids): OSM id, name, kind, position, height and its source, leaf tile, ground, Wikidata, the rule that made it a landmark, Wikipedia; read by the page for the parts in view | 11 | 10954315 | `e5954d95c3e5f01bd28fdd8971fe8528f04d0fc76e60dd2b8cc118867bc431b6` (list of names and SHA-256) |
+| features.json | the text and machine interface of the set: the parts and their shards, the landmark rule, sizes by level and class, the credit | 1 | 9602 | `1f7a862ba2510b1b2fcab0ca6c72da6eea301f8e41e246e644b3eb9d7dac574d` |
+| names.json | the named landmarks for search (name, position, row); read on the first search | 1 | 2792804 | `95ae175c4a3e627cec6516961feee4bc1c43d7147b34cb7efec4ad0ad3262796` |
+| provenance/log.json | fetch records and dataflow activities (inputs and outputs by SHA-256), counts per part | 1 | 1418734 | `b17820f435dbfbe03e0ec696457a90696b68b03c2a621fba3d11ccdd9ad3e17e` |
 
-Total 324.07 MB (README.md not counted). Tiles by class (attributed: landmark outline vertices and indices, and 36 bytes for each landmark box; the rest is the mass): landmarks 54.64 MB, other buildings (their own boxes at the leaves, far blocks at the coarse levels) 251.51 MB.
+Total 324.57 MB (README.md not counted). Tiles by class (attributed: landmark outline vertices and indices, and 36 bytes for each landmark box; the rest is the mass): landmarks 54.84 MB, other buildings (their own boxes at the leaves, far blocks at the coarse levels) 251.67 MB.
 
 ### By level
 
 | level | tiles | MB | triangles | landmark outlines | landmark boxes | buildings as their own boxes | far blocks (buildings they stand for) |
 |---|---|---|---|---|---|---|---|
-| 7 | 47 | 0.17 | 69,160 | 0 | 33 | 0 | 6,883 (16,528) |
-| 8 | 133 | 0.95 | 726,750 | 0 | 440 | 0 | 72,235 (253,479) |
-| 9 | 415 | 6.84 | 6,985,430 | 0 | 1,921 | 0 | 696,622 (3,218,679) |
-| 10 | 1,429 | 45.15 | 51,060,600 | 0 | 5,662 | 0 | 5,100,398 (14,573,858) |
-| 11 | 5,030 | 253.05 | 228,968,066 | 85,573 | 0 | 22,661,675 | 0 (0) |
+| 7 | 47 | 0.19 | 69,830 | 0 | 100 | 0 | 6,883 (16,528) |
+| 8 | 133 | 0.98 | 727,690 | 0 | 534 | 0 | 72,235 (253,479) |
+| 9 | 415 | 6.88 | 6,986,590 | 0 | 2,037 | 0 | 696,622 (3,218,679) |
+| 10 | 1,429 | 45.20 | 51,062,350 | 0 | 5,831 | 0 | 5,100,404 (14,573,864) |
+| 11 | 5,031 | 253.27 | 228,978,705 | 85,902 | 0 | 22,661,675 | 0 (0) |
 
 ### By part (region)
 
@@ -77,16 +98,16 @@ Tile bytes are shared out by the built area of each part under a tile (a tile on
 
 | part | code | records read | buildings drawn: landmarks | in the mass (of them Microsoft) | heights: OSM, Microsoft, other Overture, GHSL, default | tile MB (landmarks) |
 |---|---|---|---|---|---|---|
-| North East | E12000001 | 1,025,031 | 3,828 | 909,454 (301,552) | 27,755, 372,312, 0, 496,196, 17,019 | 12.3 (2.2) |
-| North West | E12000002 | 3,207,185 | 6,992 | 2,467,964 (835,946) | 222,802, 1,085,052, 0, 1,124,929, 42,173 | 31.3 (5.0) |
+| North East | E12000001 | 1,025,031 | 3,828 | 909,454 (301,552) | 27,755, 372,312, 0, 496,196, 17,019 | 12.3 (2.3) |
+| North West | E12000002 | 3,207,185 | 6,992 | 2,467,964 (835,946) | 222,802, 1,085,052, 0, 1,124,929, 42,173 | 31.4 (5.1) |
 | Yorkshire and The Humber | E12000003 | 3,463,544 | 7,104 | 2,100,499 (638,076) | 89,332, 821,670, 0, 1,156,091, 40,510 | 27.0 (4.8) |
 | East Midlands | E12000004 | 4,798,223 | 5,717 | 1,993,225 (849,359) | 64,252, 1,125,344, 0, 770,834, 38,512 | 25.5 (4.1) |
 | West Midlands | E12000005 | 3,568,972 | 6,349 | 2,021,963 (569,949) | 175,531, 1,098,182, 0, 717,318, 37,281 | 26.2 (4.7) |
-| East of England | E12000006 | 4,348,373 | 9,981 | 2,526,335 (806,934) | 101,126, 1,341,594, 0, 1,044,947, 48,649 | 33.6 (6.6) |
-| South East | E12000008 | 7,241,755 | 13,041 | 3,222,655 (979,916) | 221,161, 1,750,679, 0, 1,198,523, 65,333 | 43.1 (8.7) |
+| East of England | E12000006 | 4,348,373 | 9,981 | 2,526,335 (806,934) | 101,126, 1,341,594, 0, 1,044,947, 48,649 | 33.6 (6.7) |
+| South East | E12000008 | 7,241,755 | 13,041 | 3,222,655 (979,916) | 221,161, 1,750,679, 0, 1,198,523, 65,333 | 43.2 (8.7) |
 | South West | E12000009 | 4,048,105 | 14,763 | 2,562,293 (742,829) | 360,885, 1,222,212, 0, 946,209, 47,750 | 36.4 (8.4) |
 | Wales | W92000004 | 2,322,280 | 5,161 | 1,436,795 (650,721) | 45,140, 694,700, 0, 677,680, 24,436 | 19.7 (3.2) |
-| Scotland | S92000003 | 4,063,687 | 8,909 | 2,261,777 (339,096) | 222,634, 963,540, 0, 1,009,152, 75,360 | 36.9 (5.9) |
+| Scotland | S92000003 | 4,063,687 | 8,909 | 2,261,777 (339,096) | 222,634, 963,540, 0, 1,009,152, 75,360 | 37.0 (6.0) |
 | Northern Ireland | N92000002 | 1,511,014 | 939 | 1,158,715 (266,213) | 26,102, 330,952, 0, 740,246, 62,354 | 14.0 (1.0) |
 
 What each part left out or took by a rule (counts of place-lite-select):
@@ -603,7 +624,7 @@ Outputs:
 
 Parameters: `{"part":"N92000002","part_index":10,"name":"Northern Ireland","parts":["E12000001","E12000002","E12000003","E12000004","E12000005","E12000006","E12000008","E12000009","W92000004","S92000003","N92000002"],"exclude":["E12000007"],"coast_m":250,"not_in_countries":{"file":"docklands/data/world/countries.json","iso2":["IE"]},"geometry_classes":{"OpenStreetMap":"osm","Microsoft ML Buildings":"ms"},"licences":["ODbL-1.0","CDLA-Permissive-2.0","CDLA-Permissive-1.0","CC-BY-4.0","CC0-1.0"],"rule":{"encyclopaedic":true,"building":["cathedral","castle","palace","stadium","grandstand","tower","lighthouse","windmill"],"historic":["castle","palace","fort","tower","monastery","abbey","city_gate"],"man_made":["tower","lighthouse","windmill","water_tower"],"leisure":["stadium"],"named_tall_m":25,"named_big_m2":3000,"min_area_m2":20},"level":11,"atom_m":200,"storey_m":3,"small_m":3,"default_m":7,"raster_min_m":3,"height_rule":"OSM height > OSM building:levels x 3 m > height of a non-OSM source with an open licence (Microsoft ML Buildings: \"ms\") > num_floors of such a source x 3 m > small kinds 3 m > GHSL cell under the centroid (min 3 m) > default"}`
 
-### place-lite-landmark-heights version 1 (activity `e4e4430d78a3d800`, 2026-10-23T11:40:30.537Z)
+### place-lite-landmark-heights version 2 (activity `fe67c4bb9e5050a7`, 2026-10-23T12:22:04.734Z)
 
 Skill docklands-3d-page; tool tools/build-place-tiles.mjs.
 
@@ -622,15 +643,16 @@ Inputs:
 - landmarks N92000002: `data/raw/places/uk-lite/work/lite-N92000002-landmarks.json.gz` SHA-256 `01c8785394c7c2a5ce0961e32eab9bfb14ef9917f68f1d732611aee92ad1fd0f`
 - overture building parts: `data/raw/places/uk-lite/overture-building-parts-2026-09-23.1.ndjson` SHA-256 `5fc23d4beb97b4e16f64bf1230b4c24094f54b77b5c1c821e5aaee2d8d96dc6c`
 - wikidata heights: `data/raw/places/uk-lite/wikidata-heights.tsv` SHA-256 `e184b6056752ddbf0be048672f6e83cc8d0dbb3ea56b0c02154febd6d8acfb4e`
+- osm part shapes: `data/raw/places/uk-lite/osm-part-shapes.tsv` SHA-256 `967fe4cbbcb2b96bfd16dad6e3a34888b71cba858f70da5c31ddad62cf2a9071`
 
 Outputs:
 
-- `data/raw/places/uk-lite/work/lite-landmark-heights.json.gz` SHA-256 `608c3f8f82173a9b378a6af1f055b67d17b18533fca7adc0933acd9e3d7c3af0` (180207 bytes)
-- `data/raw/places/uk-lite/work/lite-landmark-heights-counts.json` SHA-256 `c8cf2aadac9e5953506f44d096b01d41973913120d6c372bec0bce45ebfd2773` (514 bytes)
+- `data/raw/places/uk-lite/work/lite-landmark-heights.json.gz` SHA-256 `727181e27296211f45f90fd4297eda134c090ceab7853c710be1baa9ae81370a` (184191 bytes)
+- `data/raw/places/uk-lite/work/lite-landmark-heights-counts.json` SHA-256 `6627ee3cebc12850149cc76bd643d59b23ef06c6957f5f1495ff26dfda825dd5` (697 bytes)
 
-Parameters: `{"rule":{"rise_m":3,"rise_share":0.15,"max_parts":64,"max_wd_m":330,"spire_share":0.35,"tower_share":0.2,"tower_min_m":4,"tower_max_m":15}}`
+Parameters: `{"rule":{"rise_m":3,"rise_share":0.15,"max_parts":64,"max_wd_m":330,"spire_share":0.35,"tower_share":0.2,"tower_min_m":4,"tower_max_m":15,"cap_share":0.25,"cap_max_m":8}}`
 
-### place-lite-tiles version 5 (activity `8f8a5656dcd895cd`, 2026-10-23T11:46:11.398Z)
+### place-lite-tiles version 6 (activity `0ed542dcc9f30617`, 2026-10-23T12:27:48.063Z)
 
 Skill docklands-3d-page; tool tools/build-place-tiles.mjs.
 
@@ -658,18 +680,19 @@ Inputs:
 - landmarks S92000003: `data/raw/places/uk-lite/work/lite-S92000003-landmarks.json.gz` SHA-256 `671d0efdb6f6aeeaba8ad186f97b8d9d3bf1831831ae3a1e2084745dcc059bad`
 - building records N92000002: `data/raw/places/uk-lite/work/lite-N92000002-buildings.bin.gz` SHA-256 `732e8e64203833a66d8923bfdbc2f5a1e6c6e94a9ca1dd725d9489b3e8236245`
 - landmarks N92000002: `data/raw/places/uk-lite/work/lite-N92000002-landmarks.json.gz` SHA-256 `01c8785394c7c2a5ce0961e32eab9bfb14ef9917f68f1d732611aee92ad1fd0f`
-- landmark heights: `data/raw/places/uk-lite/work/lite-landmark-heights.json.gz` SHA-256 `608c3f8f82173a9b378a6af1f055b67d17b18533fca7adc0933acd9e3d7c3af0`
+- landmark heights: `data/raw/places/uk-lite/work/lite-landmark-heights.json.gz` SHA-256 `727181e27296211f45f90fd4297eda134c090ceab7853c710be1baa9ae81370a`
+- structures: `data/raw/places/uk-lite/work/lite-structures.json.gz` SHA-256 `e0d54a21c491ebc10b05a4463a684fe22fb0df42fcc7203af2c6686368fd6c0c`
 - world-base heights: `docklands/data/world-basedem (287 tiles over the UK box; sha256 of the list of path and sha256 of each)` SHA-256 `681c431d557f86e695e8ae42cc09e4b67fba561259938507cd8760de29367585`
 - geoid: `docklands/data/world/geoid-egm96-1deg.png` SHA-256 `4e9eb4b3ac040dd6276ba74310a405fab7d5c9955c005c8f84a49103318c26ca`
 - world terrain texture: `docklands/data/world/terrain-4096x2048.png` SHA-256 `c98bbf1ffc2ac9db5fd796f1bee160f22561b032b691d938195243624febbb5b`
 
 Outputs:
 
-- `docklandia:data/gb/uk-lite/tiles/11-1950-1681.glb` SHA-256 `16b957ffcd0eacac7a2d2b94e3b49e6e3aa13d815c92d20d699578a0be6383d3` (5088 bytes)
+- `docklandia:data/gb/uk-lite/tiles/11-1950-1681.glb` SHA-256 `b8deec29e60cfb419f938e8a667b035c734dcb63c7b38803542d13c34ced63d2` (5088 bytes)
 - `docklandia:data/gb/uk-lite/tiles/10-975-840.glb` SHA-256 `46e86cf80be7417a9920569e5ce5202a6c4e88daa7ddd618d221453469186a26` (2504 bytes)
 - `docklandia:data/gb/uk-lite/tiles/9-487-420.glb` SHA-256 `04384ec2dd0e5cca84ece6e4eed3f3118dc6bde2a5e53f8a20390b998144e67e` (2476 bytes)
 - `docklandia:data/gb/uk-lite/tiles/8-243-210.glb` SHA-256 `7afc49e70bd65f778d6b65452144690a57d12fd35b09b8730907ffb2b7f5228a` (1084 bytes)
-- and 7,197 more (tiles and tile sets: the Files table above)
+- and 7,198 more (tiles and tile sets: the Files table above)
 
 Parameters: `{"top":7,"leaf":11,"levels":{"7":{"tall_m":150,"big_m2":150000,"merge_m":1600,"err_m":2560},"8":{"tall_m":90,"big_m2":60000,"merge_m":800,"err_m":1280},"9":{"tall_m":60,"big_m2":25000,"merge_m":400,"err_m":640},"10":{"tall_m":40,"big_m2":10000,"merge_m":200,"err_m":160}},"leafRule":{"town_m":200,"rural_m":400,"town_share":0.08,"simplify_m":1.5},"full_share":0.5,"drop_m":8,"external_from":9,"colour":"#d6cbb6","version_label":"uk-lite-3","grid_n":17,"far":{"gap_m":5,"fill_min":0.4,"h_rel":0.35,"h_abs_m":3,"min_m2":{"7":11400,"8":2850,"9":712,"10":178}},"classes":["landmark (OpenStreetMap)","merged buildings (OpenStreetMap and Microsoft)","OpenStreetMap","Microsoft ML Buildings"],"credit":"© OpenStreetMap contributors (ODbL 1.0); Landmark tags: OpenStreetMap via the QLever OSM endpoint (planet 2026-09-21); Buildings: OpenStreetMap data and Microsoft ML Buildings footprints via Overture Maps © Overture Maps Foundation, © Microsoft (ODbL 1.0); Building heights and floors from Overture Maps buildings © Overture Maps Foundation (ODbL 1.0; includes data © Microsoft, © OpenStreetMap contributors and others per record); Building heights from Microsoft Global ML Building Footprints © Microsoft (ODbL 1.0); Building heights (where OSM has none) from GHS-BUILT-H R2023A © European Union, 1995-2026, JRC (CC BY 4.0); Ground: Copernicus DEM GLO-90 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and ESA (the globe's world-base `
 
