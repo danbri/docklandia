@@ -5055,6 +5055,225 @@
    ],
    "ms": 11,
    "at": "2026-10-23T11:09:46.348Z"
+  },
+  {
+   "activity": "6d47ba1816998907",
+   "operation": "place-far-outlines",
+   "version": 1,
+   "skill": "docklands-3d-page",
+   "tool": "tools/build-place-tiles.mjs",
+   "inputs": [
+    {
+     "label": "tileset",
+     "path": "docklandia:data/de/dagstuhl/tileset.json",
+     "sha256": "911c6c7fb4c660064e4bbb4c78cdae60f524ef61cb7825faaf6342fc1c84a100"
+    },
+    {
+     "label": "tiles of levels 13 and 14 (sha256 of the list of path and sha256 of each)",
+     "path": "docklandia:data/de/dagstuhl/tiles/",
+     "sha256": "d364908264602dd9a97c5d127b8058fbb3b3d009a387192d4dc4a498aa8db7b6"
+    }
+   ],
+   "params": {
+    "far_box_fill": 0.7,
+    "margin_m": 2,
+    "level": 13,
+    "rule": "a level-13 box whose building (the level-14 outline of the same height whose centroid is within the box plus 2 m) fills less than far_box_fill of it is replaced by that outline"
+   },
+   "outputs": [
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8501-6348.glb",
+     "sha256": "778db989b49b621dc54f0bdcccf5b5abfc1cda5011899cc38f79c2c2c1854120",
+     "bytes": 36744
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8502-6348.glb",
+     "sha256": "ae47c562676743ca90be190a18717fdda80c90da71cac343028d1d5df2f45d22",
+     "bytes": 40396
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8503-6348.glb",
+     "sha256": "f52a2d83e292faf855c810c5aef0c4723e1e765442e016fa874aa8f555df28a9",
+     "bytes": 40576
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8502-6349.glb",
+     "sha256": "6a403240db3284a08bc2dac2fd038fbafbd67d64893529d6c1b3b9ff544a447f",
+     "bytes": 36596
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8501-6351.glb",
+     "sha256": "e0c219fe94796a9f8f08b13de607f40d30f85071eb35288da2cfef8cb7885079",
+     "bytes": 34788
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8502-6351.glb",
+     "sha256": "503a34b2f6b58e01a4d54692cae93b3b4f07c25ccfb48190531e4aff46dea096",
+     "bytes": 46120
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8502-6354.glb",
+     "sha256": "f0594f774541caffa3964de43dfdeca2fb3c6dbf680b988d6a8ca8a6fb433f26",
+     "bytes": 37868
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8503-6354.glb",
+     "sha256": "8cd9d9d81680b066bd2084fe410dd1941b7a3fa8621c021255ce2c69ecbebb6a",
+     "bytes": 34372
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8504-6347.glb",
+     "sha256": "0308dd8673b17373dd37349ac2bcb1eb5c140e0e32c8350e3d7ed0a0e8ce06be",
+     "bytes": 35912
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8505-6347.glb",
+     "sha256": "a393c43b2d6d124f58752fafe5271a97b743e4a5d2324a91a8f5c1815f9fc3c6",
+     "bytes": 38912
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8506-6347.glb",
+     "sha256": "51a19088f840f8d0a9455c419b8b7edae90218c86cb8721c63f37817e8f8229b",
+     "bytes": 39000
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8508-6347.glb",
+     "sha256": "b9146adb98ae9c153a059f24e714cfe0d43cef2e4219000f407ed63d3c86c69c",
+     "bytes": 38320
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8510-6347.glb",
+     "sha256": "3956d3fd651423a2a431b7a351c41b220494f5f61c96d284f16eab2f4be6167a",
+     "bytes": 39060
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8504-6348.glb",
+     "sha256": "f41762e3d59cc7d45d2a781c276b31b7b5c295c66631dce745d70ce7eafc5548",
+     "bytes": 40624
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8504-6349.glb",
+     "sha256": "967cd996495d137d10ce5a634baf1e88b9ddcde9f9cd856a3f6ecc9c7197e958",
+     "bytes": 40696
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8505-6349.glb",
+     "sha256": "f62b71b1c40ae82a73830f0661b0a3ad6ced2effddcaa3e5a0c9acdfd04e7945",
+     "bytes": 34500
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8507-6348.glb",
+     "sha256": "e5ed284b4630c2842e397fee59c24e9a865fd44c760862f5ccf56134ddc7e2c8",
+     "bytes": 39484
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8506-6349.glb",
+     "sha256": "66483c0bd946cd4da43a748fcba6fc6846808901d51a3f405ce8026f17c982a5",
+     "bytes": 36168
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8507-6349.glb",
+     "sha256": "668fd32e9ec0a3a64f08d8edc56654110fe1151d25f839348b37665a8052cc48",
+     "bytes": 34676
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8505-6350.glb",
+     "sha256": "4f847dbc26d2f7f370e3e1d2a4e9efb85ddf4ebcf8bd094cc3eed1e5476a8457",
+     "bytes": 50820
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8506-6350.glb",
+     "sha256": "2e7c4999b00206b072aa2cb952348ef4b3745f0abee8a8aad26f941987880a8b",
+     "bytes": 38704
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8507-6350.glb",
+     "sha256": "b4bce65d33a74a47a0c8d93150fbbf4f856b77445c3e19c18e704255f8e0f98c",
+     "bytes": 35004
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8508-6348.glb",
+     "sha256": "cd7520b0272291cbbe9eb21045d8acbf908c60ef715b2ef54499e87f58d5ddc8",
+     "bytes": 36956
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8509-6348.glb",
+     "sha256": "d1bd7799dd0cdee049ad274dc124930a858e1720e9b80352725e50dc94ac9976",
+     "bytes": 43308
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8510-6349.glb",
+     "sha256": "e438f68a49cb0a9216b54247ae0c5d6ec8657409f90dac6bf6ccf6ad08df4bf0",
+     "bytes": 36708
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8509-6350.glb",
+     "sha256": "31f2b944deb8bb0b9b88d4976e94e030abba7252f125caac394ee2313c660680",
+     "bytes": 43440
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8510-6350.glb",
+     "sha256": "9d33b0e6a1fd87719e48a61fd68b191d22bf100295541179e78b9c1c135c5d1f",
+     "bytes": 34868
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8505-6352.glb",
+     "sha256": "df1030f2586cc1efa963392a51f3877d348ab7f7aeac277c5b197217302ebeae",
+     "bytes": 39316
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8506-6352.glb",
+     "sha256": "fa7e9a24712f0e04f5c00038cd2ee6f7e1bacac1452411e77ea3c82a6222318d",
+     "bytes": 34328
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8507-6353.glb",
+     "sha256": "c6d49558b328bb0cd47b9ab9b27a2e795ffe39f445a9e598788f0a5ad73af686",
+     "bytes": 35200
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8505-6354.glb",
+     "sha256": "92cb7adc1bbac654e615483f3e9245bd128d82dbfb65142b376304ac9d481d7c",
+     "bytes": 37880
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8509-6352.glb",
+     "sha256": "637eaff2f9b95e24c48e4cc2b5e9492e12475936a5ef0a7ca27311f21a83031b",
+     "bytes": 39808
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8508-6353.glb",
+     "sha256": "ece7b7e8a88284acb26c3385917a4954274572e67b1690527eece64d7b768c13",
+     "bytes": 35840
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8509-6353.glb",
+     "sha256": "596d36aa7cc81e8d883da32de60dbb88cff76f6d21f488aa93f69fe2a13cf1ef",
+     "bytes": 40064
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8510-6352.glb",
+     "sha256": "c408508af140685e91e1a1bd6c71b634e13a687ed102b4819762a706baf29d3c",
+     "bytes": 38036
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8510-6353.glb",
+     "sha256": "4a30bb8f79f298a47e9b121dd47c547b8e36853bff52308b6df560abd4495151",
+     "bytes": 48372
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/tiles/13-8510-6354.glb",
+     "sha256": "e8264136e3a29a30ff0ba235ded6669089adf6eaf8b26c66ae26bae8cf6f81f6",
+     "bytes": 30728
+    },
+    {
+     "path": "docklandia:data/de/dagstuhl/provenance/far-outlines-counts.json",
+     "sha256": "71b590d84c0298e3ca21fbc6b786cdb1d53bd7fee96bc4a834c90b115553cad6",
+     "bytes": 119
+    }
+   ],
+   "ms": 94,
+   "at": "2026-10-23T16:05:07.768Z"
   }
  ],
  "height_sources": {

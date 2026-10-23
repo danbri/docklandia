@@ -16859,6 +16859,850 @@
    ],
    "ms": 21,
    "at": "2026-10-23T11:09:46.616Z"
+  },
+  {
+   "activity": "7ec475c940f7e477",
+   "operation": "place-far-outlines",
+   "version": 1,
+   "skill": "docklands-3d-page",
+   "tool": "tools/build-place-tiles.mjs",
+   "inputs": [
+    {
+     "label": "tileset",
+     "path": "docklandia:data/ie/dublin/tileset.json",
+     "sha256": "6fc46b67b199b07656eb9e5517e2a10e47c006bf863e0789c0a7c87af71333e7"
+    },
+    {
+     "label": "tiles of levels 13 and 14 (sha256 of the list of path and sha256 of each)",
+     "path": "docklandia:data/ie/dublin/tiles/",
+     "sha256": "7e09f76db4159fdd30a3842c120330a8e1e25598060485ca256814fc0b245a23"
+    }
+   ],
+   "params": {
+    "far_box_fill": 0.7,
+    "margin_m": 2,
+    "level": 13,
+    "rule": "a level-13 box whose building (the level-14 outline of the same height whose centroid is within the box plus 2 m) fills less than far_box_fill of it is replaced by that outline"
+   },
+   "outputs": [
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7899-6518.glb",
+     "sha256": "a64e1cbb8bb42ff0de46d9f6a139ddf3efbd53d9dde6581adc576106fda41459",
+     "bytes": 35008
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7898-6519.glb",
+     "sha256": "1758bd978f5d9bae19b53da58fbc41b14c24303347a79ba34ad3effdf302d302",
+     "bytes": 36216
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7898-6520.glb",
+     "sha256": "b2b5cae2f17d58c83f90395b2c0aac5dbc230ba5d6590aa434bea87e96735300",
+     "bytes": 43684
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7899-6520.glb",
+     "sha256": "81dafdd255640b6b0bcdaa6f96cf1e85d0581dca8282d39867755ea9e357bc69",
+     "bytes": 47516
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7898-6521.glb",
+     "sha256": "b26a49e5c2bb1059cce22814bfa8ddd6fa961bf1fdb15d8ff828d7053e1a39fe",
+     "bytes": 42172
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7899-6521.glb",
+     "sha256": "547df8533be7829b07eff2c02fcc451fb157fc0a946ce50acbff59acb2bf6b46",
+     "bytes": 66336
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7898-6522.glb",
+     "sha256": "e956e0720984b215bdffaecc52181cbd01291d6195009550556414a209d96b30",
+     "bytes": 46540
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7899-6522.glb",
+     "sha256": "1112546428e3909e4cf5b7967ec1cf1da6c1b9588da98290518230008a697e62",
+     "bytes": 50036
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7898-6523.glb",
+     "sha256": "fd6974de78d99e28730de89ca84ac1db56dca8273839f59afed9bf9f9d71f0a7",
+     "bytes": 43304
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7899-6523.glb",
+     "sha256": "782e1c9b856eea8f0d0d55421abe06f53a1d35176b22e0b033ac8319ae9a4e9c",
+     "bytes": 51192
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7900-6520.glb",
+     "sha256": "60bc4ec7fda8db3bcff29f288d08d3a0ab57e2e96a0ec6d7bfeb059379748e32",
+     "bytes": 45980
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7901-6520.glb",
+     "sha256": "969daab24b0ed525b29ac0bd2dd316de8b0569f41bb6a032d0cc660e87b0c194",
+     "bytes": 51676
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7900-6521.glb",
+     "sha256": "4c1a3d429e2247ca0f407cd74d546741ff9c38dfbc5c656bbb14bba51bbb40da",
+     "bytes": 50992
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7901-6521.glb",
+     "sha256": "03928cafff2e021c0f7d55a4896ba977c2b6402c94f08576585543f3c91cbab7",
+     "bytes": 79636
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7902-6520.glb",
+     "sha256": "07647a2beefb1d0f92a5c1c29c1579ea40ce626df497c5dd7a0d12cb5480b7fe",
+     "bytes": 49276
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7903-6520.glb",
+     "sha256": "2808e45059fe0402d9d195fd8c3576a3f2426c9d06564707ddcd750551698ee2",
+     "bytes": 46592
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7902-6521.glb",
+     "sha256": "eee9fe2f57a9b330fe60fc98a7622ed8036e27090fad8412330b6e4b8020b6a9",
+     "bytes": 74052
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7903-6521.glb",
+     "sha256": "f3a02345ebd15de5f7d217e452b9ef060280bc56bf81a9fb24257bffbfd69478",
+     "bytes": 47456
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7900-6522.glb",
+     "sha256": "978446ab157fc1f800d2aca32d15bc954fd292a24346addfdedbfd2062657eb7",
+     "bytes": 57868
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7901-6522.glb",
+     "sha256": "6b8e63064001607f1ba8a3d622bdd4039c0c5f7490cdddcbee6edf07756826b3",
+     "bytes": 61624
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7900-6523.glb",
+     "sha256": "c3bca0455f3b98d59031ea0dd9f5b239257ae3512acbff190a0043e952e423bb",
+     "bytes": 57788
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7901-6523.glb",
+     "sha256": "a83da1c9d75c6a0df49fa2915e37abdd3da5ca691260c8b8cc59d7900fe691cc",
+     "bytes": 85088
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7902-6522.glb",
+     "sha256": "5185f4c9dd4f7a8da843cfeb00adb19151d12c85dbdc74aa4c79ed7f22891db4",
+     "bytes": 78344
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7903-6522.glb",
+     "sha256": "3f5f6425384c21a3f657dbfeca3f0826ebd0eb7ea806e287c97a05e4c7c770c0",
+     "bytes": 88172
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7902-6523.glb",
+     "sha256": "328751706af7eb6fe5696ecf3614547834c60116807bfa703acc3045531a204e",
+     "bytes": 72612
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7903-6523.glb",
+     "sha256": "e766cefa123974bf894cb1ec3960a54005173b44b585473aa1dff4af1a4f5428",
+     "bytes": 74396
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7898-6524.glb",
+     "sha256": "09de3f9f9c0eb7716daa876dbff8a333c6c1dc4916907fdbe7f4647338f9759f",
+     "bytes": 48796
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7899-6524.glb",
+     "sha256": "d2cc3bafeebc43dc516526f03ab71601084a181087f64060f3219d027ae311ec",
+     "bytes": 50076
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7898-6525.glb",
+     "sha256": "606481536e3d1079d4c2343fd3b781cb4d95e6016fb9a913b1369e9aefba40c7",
+     "bytes": 45280
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7899-6525.glb",
+     "sha256": "c74ab806270faa8016861dade3aa3d8fb1094545986cfee393229f5edf67b860",
+     "bytes": 50408
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7898-6526.glb",
+     "sha256": "85e0838fbeecd735b585780ecf59fd283aa2ed5f12d49a9bc79211318886de78",
+     "bytes": 43880
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7899-6526.glb",
+     "sha256": "4562e70798f02932aac79665bea91c6f4de2d693f9a194a6c4bc3bf4ef8117d2",
+     "bytes": 54592
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7898-6527.glb",
+     "sha256": "b7985a2c3fa45a112f2b134939499470cb6db0ab02996ae7c9cf0a2265d50bca",
+     "bytes": 38204
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7899-6527.glb",
+     "sha256": "a65359efdf1184f57871c263ddfbd75da8241cec90f380a425794be7ce4fa7b5",
+     "bytes": 38076
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7900-6524.glb",
+     "sha256": "1f5a5992495e673430e6c725382e346ecba4c6bab23d9afb0465e723e1d52114",
+     "bytes": 58948
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7901-6524.glb",
+     "sha256": "78c91ee6ba165b7b0421744250828de9cda4eba0c63eff2ec5682819cca80d61",
+     "bytes": 53868
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7900-6525.glb",
+     "sha256": "172add832ec1c4911fef64e280a61b7dc5367d72e4a79e43e2196b1c6f2482c7",
+     "bytes": 59368
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7901-6525.glb",
+     "sha256": "8c4ce5b08f42470edddfd1181a2495d8606d80afa638b89579415f23ff7c3685",
+     "bytes": 68872
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7902-6524.glb",
+     "sha256": "34fff14c97fc373a0cc80033e4e5ac42df036d13e415d66172b3804a05689c98",
+     "bytes": 60560
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7903-6524.glb",
+     "sha256": "5323b9d14a5e9bb3403b90e4d1744f8f6f9546a7339b999a5bcd65a14aa01577",
+     "bytes": 50528
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7902-6525.glb",
+     "sha256": "d01473f6cb4227d7aba9fe3d76aed4868b038fe61871626b2fd5b7bc8ea34d67",
+     "bytes": 70384
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7903-6525.glb",
+     "sha256": "119834f20e5a77b8f438b65cf4cb771ad0d7b8a6019e86c5d2dadce98d4f7abf",
+     "bytes": 51452
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7900-6526.glb",
+     "sha256": "77ac696c5a7e83e9efe84dad9071763b2d19386591fe2aa6341d04ca68c5540d",
+     "bytes": 58604
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7901-6526.glb",
+     "sha256": "25d0276c90408caf2304a60127ee5889474a838b13ae4b7bf43e567bd919a663",
+     "bytes": 58172
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7900-6527.glb",
+     "sha256": "24250be7fdb2cbe8d1ad233467e9b66133a91b445f9ebce2482d56231cd65fa9",
+     "bytes": 38172
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7901-6527.glb",
+     "sha256": "e5d247f6246e9d016256e1d8cd952f60a07376184feb9f023856a1cb84a7ccb4",
+     "bytes": 46572
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7902-6526.glb",
+     "sha256": "239d86f18858ec746655c1db4ffe261bb13caf402471f8091b66d3e2e65ff5e2",
+     "bytes": 59768
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7903-6526.glb",
+     "sha256": "f080b24bea8cb6d0e76cbc21c84008e8e2fac7b5b798c221a0a28537b6a36816",
+     "bytes": 56084
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7902-6527.glb",
+     "sha256": "7e0f3f9965232937dedef2a627f11a0c837ba554f395315ee9f7a1aa13c537b9",
+     "bytes": 41436
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7903-6527.glb",
+     "sha256": "6851234bfacbbe1f5ac971116794dc373e9811ba282b3660a210d37716b34682",
+     "bytes": 42764
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7898-6528.glb",
+     "sha256": "72f73006d1c21c392dda04e27014f99148a6472b2c324dc1da79e5042b3c755c",
+     "bytes": 32776
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7899-6528.glb",
+     "sha256": "2fca1a47607ec3701f72110372f86242fc09b99c11e016e534d147f854d5d161",
+     "bytes": 33780
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7901-6528.glb",
+     "sha256": "5bf804a01de3998e0712bc6b1af7ea5add32d5a436a5534f0689eb34af26a816",
+     "bytes": 36860
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7902-6528.glb",
+     "sha256": "6c41954cff2ca7bcd9fc06fec0372c1c7b84478891bbdee4c06226d2a875a790",
+     "bytes": 33952
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7903-6528.glb",
+     "sha256": "d1cd79ea012bd7f988dd125a32752f12765ae8587cb93cc23f547e01a056e9d1",
+     "bytes": 35688
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7904-6519.glb",
+     "sha256": "30b085d88c82aa85232eedb867882f13ef731cd0b3e75b14b9e1936a6513074e",
+     "bytes": 35972
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7905-6519.glb",
+     "sha256": "f56d53d5a1f0526f44c704bb576b339e744d9546c5bb64ad377b26ffcf084ecb",
+     "bytes": 38304
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7906-6519.glb",
+     "sha256": "e46a1e58586bd0e65229e569c01df2e06f41c027d7508c1e01c67e341245ad01",
+     "bytes": 35884
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7907-6519.glb",
+     "sha256": "ad685f0a4cfd33551114ec7b20862a8de0214c94a23e81843a8f46948227cc8e",
+     "bytes": 35172
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7911-6517.glb",
+     "sha256": "689efbdae25d7dee36768f23f164838c137dddcd3ac173a96b8dcf67be291c5a",
+     "bytes": 38836
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7908-6518.glb",
+     "sha256": "378efbee6bcd29a54a3ddab08c4f4f825af9962feb01b94ba7cba82a7721d3d5",
+     "bytes": 35680
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7909-6518.glb",
+     "sha256": "e64908d7eed3b54d865972d80109fde2774eddca93d4eb9d91211f3ed56a2b30",
+     "bytes": 37880
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7908-6519.glb",
+     "sha256": "b6be4112631084dcd911c68b4c1489e4ce9bb2c685ca7ba24bfae7d320c922b4",
+     "bytes": 46420
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7909-6519.glb",
+     "sha256": "c3f7b70c1e9dce09660e92ed1d7a67c8529f2b02a48eb1befa5235d2fb93d9d9",
+     "bytes": 52188
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7910-6518.glb",
+     "sha256": "f6ba699d0ab10016a4d5c9d8bf5d7f8387c5cc06dc20203dbe52a4624f7faa14",
+     "bytes": 43980
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7910-6519.glb",
+     "sha256": "971fded4e5d616c026acc2c4ad1a88438c528b0b2cc2f5dffdf9804e7eafdb6e",
+     "bytes": 49884
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7911-6519.glb",
+     "sha256": "1b68f4962213dfaf32498d5e72172ab629f58afb3af74642513862b3baa8a895",
+     "bytes": 50404
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7904-6520.glb",
+     "sha256": "38afdeac4fe9974ec83615f1e8633a5b09357c770c4e02c443d749f77f27259b",
+     "bytes": 47416
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7905-6520.glb",
+     "sha256": "ba3f340a67b2bf63bd4310743f1ebc504f6ddc88a4b25d594fbba8ff614489bd",
+     "bytes": 44208
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7904-6521.glb",
+     "sha256": "a8595285bdd3debfcda8dd008c997427964c0e8d9595d42e666732c35b1ed6a8",
+     "bytes": 55468
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7905-6521.glb",
+     "sha256": "cf3c846918e45e819944c194ce0c253206e6e56545ded2b14cc8a3e48ea2e10c",
+     "bytes": 60632
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7906-6520.glb",
+     "sha256": "0a0eeafe2880d0726da8b249c0b3ee894cc6f78d09036db22068ec612f5ea4a9",
+     "bytes": 46200
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7907-6520.glb",
+     "sha256": "5b5054e8789b331c06fca001cfd6dba3efc17d50eaf475a8ecec5fffbfe4ddab",
+     "bytes": 62880
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7906-6521.glb",
+     "sha256": "b8fa523f7377e93f33ca57d3ee2d911a843c98ed2dfb4839df05127851a038e3",
+     "bytes": 57180
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7907-6521.glb",
+     "sha256": "99cf07b59daaf09c676ff9bb7083f707596be25718a1c8041ca2e425acbacb7b",
+     "bytes": 60692
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7904-6522.glb",
+     "sha256": "5af0b54437baa57153f2fdf4ee1307bdc5297203a6a3ab24b81ff922bc6ffb71",
+     "bytes": 61980
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7905-6522.glb",
+     "sha256": "fdfdcf0306cb337f1de592f57a546b3c93478f0f8ca8a5506cea2cfb02f6392f",
+     "bytes": 61960
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7904-6523.glb",
+     "sha256": "1c565966a644c40aef194a9005e10c0eb09628a83541dd0ed5347030e8da84bf",
+     "bytes": 84980
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7905-6523.glb",
+     "sha256": "f6ea59bdbdcd804a2e75ec6cd6ef3682719b1eb81879485ed638defc7de6ba05",
+     "bytes": 106272
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7906-6522.glb",
+     "sha256": "fec7c6fdb30350c7150ba62187d8625cb4418ab2237769393f1e07322b5da49c",
+     "bytes": 76932
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7907-6522.glb",
+     "sha256": "35a3001ea8e30150c3a6bcee5a62d4db1c219d0e8d87e1959d5b91cdfa7610e7",
+     "bytes": 75472
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7906-6523.glb",
+     "sha256": "1581fdefa34e573169c1d796474e8e9d7f70524a5e028860656153fa67d8b80a",
+     "bytes": 219312
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7907-6523.glb",
+     "sha256": "0d5e52357ceb0151bf94c91d5077b6ec6d27ca7e1edc437d7b75fb687d344476",
+     "bytes": 170060
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7908-6520.glb",
+     "sha256": "41a5dfedb7c103686ecb953cf80398bf7ec900020f1352e910d46430e671904e",
+     "bytes": 63880
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7909-6520.glb",
+     "sha256": "906e8ef97b386f25d7c979ca4e4582a0be72de246cbee3fb7956f079ead8b62f",
+     "bytes": 82784
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7908-6521.glb",
+     "sha256": "3adef12159184a077a5e4c3c55252aaa5e1e63e048d7190f8da2469a9de64d11",
+     "bytes": 74796
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7909-6521.glb",
+     "sha256": "dded90d8edbebaa8655a2104edb6dd4b4495dff3e143f05df3d4f11c1f177e31",
+     "bytes": 69520
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7910-6520.glb",
+     "sha256": "a2d31c5a9f76d0a3a67deefd5afb9a45eb9790e594ca4f268e0015daddd9413c",
+     "bytes": 62564
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7911-6520.glb",
+     "sha256": "065a4012d1dec2ac0bf945fdf4c2afc1a532e6db2eb0d1a7cb983ca8f7b85d1e",
+     "bytes": 64120
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7910-6521.glb",
+     "sha256": "6e7129717c79361593206e4aae374a1bd0ca919687cc9c86f5622806ec8b4232",
+     "bytes": 73200
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7911-6521.glb",
+     "sha256": "147fe02c17fabb7c59e3674fe4b71fe2fde43eecc607d80ae356f7f7e3fe6e9d",
+     "bytes": 54456
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7908-6522.glb",
+     "sha256": "3110e55127f30169dc99b0febcdcacdb856a5d7b58407f67edd1ff6073bb1883",
+     "bytes": 82944
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7909-6522.glb",
+     "sha256": "d8ce913f41dbdc727b68ded374416be423736531c628233a69fd8582370e8685",
+     "bytes": 60872
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7908-6523.glb",
+     "sha256": "865af8aaf31bf679d362290b5802135394d190798dfddd82bc57180fe2d0ae22",
+     "bytes": 110840
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7909-6523.glb",
+     "sha256": "c09354fdf619f061bf9fac9bed5cbcb17dfee8a3b40483dcf48e242addc3f0c3",
+     "bytes": 51544
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7910-6522.glb",
+     "sha256": "060fc409437a396a9b55bdc2b63ee43ddfc061cd1bfb13ea1713bad192a3a984",
+     "bytes": 30376
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7910-6523.glb",
+     "sha256": "f61707ab5e7e111e287e08c49555157ef7630ae34d92be7022bc17c017df359f",
+     "bytes": 33568
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7904-6524.glb",
+     "sha256": "ad155568bcac25432c3d4cc4ad81dd7ed8cf074a7bac3dfee828c07db6792bc1",
+     "bytes": 62088
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7905-6524.glb",
+     "sha256": "444f7404d4509bbd90968a591581b244cc5f0071efd49c85306cf3f89d970c45",
+     "bytes": 79804
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7904-6525.glb",
+     "sha256": "26e488cd8e24ec5bfbadab9f9778643b9262076c721cd672e01e3a0e5c32b0c8",
+     "bytes": 67324
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7905-6525.glb",
+     "sha256": "f4fb63b251f59fa1af64654eeaab121c8ff616f32cd82a87230b9e32074561c4",
+     "bytes": 71692
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7906-6524.glb",
+     "sha256": "63630fab36a4d522f84e80d520c199451575fdae4c94334b51e1f6a54580b326",
+     "bytes": 117656
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7907-6524.glb",
+     "sha256": "0f051d88541f4d4058e26864e0e30d8eb68bb8df7c536a0a11b8b1cc2e4348b5",
+     "bytes": 170760
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7906-6525.glb",
+     "sha256": "f0014e3c2171b9764e70e1de80fb001604490c08a7b568dbbf1ee651aec34b03",
+     "bytes": 69772
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7907-6525.glb",
+     "sha256": "23040fa8969e05244a40b9f13bc894aab8b65cbf5b8168315c1e8c11f8b08f37",
+     "bytes": 80808
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7904-6526.glb",
+     "sha256": "e7692d9549d5f5e9ea660a0900148f7e03a499808c4a1cb1f501f2322a2d7016",
+     "bytes": 58008
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7905-6526.glb",
+     "sha256": "5abffe14a4db793475388ea9ed63a2f16abfaba8bc39c6eaed9c465e145011ad",
+     "bytes": 61868
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7904-6527.glb",
+     "sha256": "7a8a595673466a3c6b8b08624fef8bbf93bdf82f70a0d89c2b6c6747c6e3db2a",
+     "bytes": 40292
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7905-6527.glb",
+     "sha256": "b59f99d0cef0c7fa8e66ab05f49dc65049bba95e516368e11a1a16cd6feb7116",
+     "bytes": 37268
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7906-6526.glb",
+     "sha256": "cf6fe824eb642120992ae1a03de2f49804c2a1f2c1860761b5e8231a047bb718",
+     "bytes": 61496
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7907-6526.glb",
+     "sha256": "2a9c946a4ef12f4ac9fb924379283c1ff5eb929c82f7ac35e0cca0a61e06bfbd",
+     "bytes": 71232
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7906-6527.glb",
+     "sha256": "7e890483d6fbdc53b63f58123ff64e31fd5f76dcc5c9640918cc6f28ec7eba20",
+     "bytes": 37012
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7907-6527.glb",
+     "sha256": "215ef56c6f925b9a4a7899b7041f13ff52c1a03a11f84032303aa0b0ae905b19",
+     "bytes": 52604
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7908-6524.glb",
+     "sha256": "5af8528525e637e89b40b7363f477c058bb1031112bfd4e3cc756a1e6ca8ce8f",
+     "bytes": 76980
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7909-6524.glb",
+     "sha256": "f4e0b45d329d5ad099fb38262cc9f8f5dc33290c93224e79d2cb4ed522947c47",
+     "bytes": 59668
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7908-6525.glb",
+     "sha256": "f6491e57012fad9d33264661948dadb42551843baeb598cdebb2e98ebc9571ff",
+     "bytes": 65648
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7909-6525.glb",
+     "sha256": "2912c9485e49a9cd47f6099d0171eafe2d55cc8402b0ceba4d5f68845bccfef9",
+     "bytes": 61804
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7910-6524.glb",
+     "sha256": "ac0b92cc58ded1e2a04edc3b2bc59b22985cf50f81b8dabf1e06aed05bc22933",
+     "bytes": 43460
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7911-6524.glb",
+     "sha256": "7cbd26ac8cf47d5cd470f284df0d4980bec28753869535ec8c29465b4676fe20",
+     "bytes": 31652
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7910-6525.glb",
+     "sha256": "f1019a65ee454ae1d8831ad64ffe03c2a331a5646f7c05f1d5c35c3f745442d6",
+     "bytes": 64508
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7911-6525.glb",
+     "sha256": "6cb9ddc51fbca276a9194560797a6a3f33fc2f422ada5183683eec79f6ced5a2",
+     "bytes": 53968
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7908-6526.glb",
+     "sha256": "2f301beb8006c6f540011c02dd3583bbad9ef2f792fb2fe646238cf571046e66",
+     "bytes": 57964
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7909-6526.glb",
+     "sha256": "ca40d89366c1b85268188066db0dfc092b7917b90067dbdeae64101a289e4074",
+     "bytes": 49248
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7908-6527.glb",
+     "sha256": "4af34a9607d193874faf34c9db2337e5fb3fa080bc2d65d957decdd797c8c1ac",
+     "bytes": 51236
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7910-6526.glb",
+     "sha256": "4a61425f7d75564b918ac27341521d9508062fffbc4eba093ba73fff3c95cbab",
+     "bytes": 62784
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7911-6526.glb",
+     "sha256": "50143db2230992848523034d78ff7cb2d5e1961a006ffa6da26f56f984978a4d",
+     "bytes": 67232
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7910-6527.glb",
+     "sha256": "9974535abf60cf4d615c3b7505a6d8b33621ccec264e7e310196f39694c1bc25",
+     "bytes": 40544
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7911-6527.glb",
+     "sha256": "f9afdefbc47a863b9efd157c82c0d1b5d6d6c637552159b725e22d9cac932238",
+     "bytes": 43668
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7904-6528.glb",
+     "sha256": "d5812a9722e52ac02c05648e6c594e2b0a04f2c75e2404c184596fa2121f806f",
+     "bytes": 35492
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7905-6528.glb",
+     "sha256": "b4fd086cb0d289c2b0d07d7f8d7ee4e02bcbdc646f0ebe0b9ffadc09d8fda74e",
+     "bytes": 36860
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7906-6528.glb",
+     "sha256": "bfa0faf519b331220c12a6e3f6cd19dae73466fe6d3780efeccf7bd5d86f2efb",
+     "bytes": 44412
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7907-6528.glb",
+     "sha256": "fbddbe53cd81a8074148d0f90b52079de865168af7dff766831f28f7036aaa0e",
+     "bytes": 48288
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7908-6528.glb",
+     "sha256": "38af3d44263362724b721e455b18558659281f01ccfdb45fae6f784b7aca9a8c",
+     "bytes": 66820
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7909-6528.glb",
+     "sha256": "65b95a2597494153c47bf73a74c59e7fc75a473f29da56ba544a0cd0d8aab5aa",
+     "bytes": 55332
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7908-6529.glb",
+     "sha256": "13c0c55461fa70c1cd86e35520dcbc5abea84fe97bf7078d0ed6197c4251b774",
+     "bytes": 39592
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7909-6529.glb",
+     "sha256": "cd4ebca3b866f8e4d482e641edc3f80730b5f2d9f7b3370ddaac3b01061fde01",
+     "bytes": 40940
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7910-6528.glb",
+     "sha256": "c2e5b89924a54797dff2a4902c65b11a428a1319c20eb1c56a638d4a4d2c1ee4",
+     "bytes": 42688
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7911-6528.glb",
+     "sha256": "91e09ad8f533d05fa5e064ac037672608dfab43ffdeed06e4aec754375105e68",
+     "bytes": 49132
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7913-6517.glb",
+     "sha256": "943ec811194d70bc73a3cf58c7f65e236e8b439da290f84c8e611aa820bd9916",
+     "bytes": 45608
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7914-6517.glb",
+     "sha256": "d24bf4ac811c58d1dc19131f0bc9dc6eb12c7535d68ad78212440158217de6c1",
+     "bytes": 34464
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7912-6518.glb",
+     "sha256": "36979f4a754f8d48128e836cd3743567c152528953476f98a97759f9cb11e414",
+     "bytes": 48456
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7913-6518.glb",
+     "sha256": "ea29ee4cd72d46bb345143e0c4664013b468f6bdce333525bac0244ceb5ed7f6",
+     "bytes": 56068
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7912-6519.glb",
+     "sha256": "1906e3af14d79a2ffad662fda66d9480406e04abafd179556b88db611dc7033e",
+     "bytes": 67516
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7913-6519.glb",
+     "sha256": "b239fcc23d6e61a6d861c7ba0c6a37ce655a9fe4c091367fdc85bfe07010f728",
+     "bytes": 57208
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7912-6520.glb",
+     "sha256": "bb69150bb73e1b8f3414982da3c662b3aa245fe84a4ec70c85ac46545e9a295a",
+     "bytes": 71548
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7913-6520.glb",
+     "sha256": "a8083f7f0c189bbffbe219cd5b3dfdfe857a485c4ef7834639857fc644171fc4",
+     "bytes": 52540
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7912-6521.glb",
+     "sha256": "4ca86eef422011a8c2ca770f7c58d01c9aa1b468c323f728f1c5e65c6702988e",
+     "bytes": 64644
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7913-6521.glb",
+     "sha256": "9050830d60f8bbe7318071b6bd549daa706558101cd47df3e60ecbdc500f311d",
+     "bytes": 34440
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7914-6520.glb",
+     "sha256": "681d34aa05a917f312126972ed4caa2ff3d97ff2110d3f31fd9d836d7fc8bcda",
+     "bytes": 40384
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7914-6521.glb",
+     "sha256": "dc4787b7bb1c85deafdabc640e43e97b8fa6efdc80e50718fb4b8c85caa136b8",
+     "bytes": 28352
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7912-6525.glb",
+     "sha256": "9b8e307e056313bf5f20e8d7bd9f1d2456fd5d2bbcdb57701f818b30bbb375ee",
+     "bytes": 40480
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7913-6525.glb",
+     "sha256": "672d7ac5d29bd77ebc1e0a42ba5742209b60d8d2b6e2e5998cfb1ce3be74f1c4",
+     "bytes": 36592
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7915-6524.glb",
+     "sha256": "41a493657082c5cb013e6f63abdff461af7260e4d9018a6860d92f161c5b7bc2",
+     "bytes": 36120
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7914-6525.glb",
+     "sha256": "e286ed8a48d18f41340052110650223c069f4ce1c6d5937344e768f5805110e2",
+     "bytes": 47584
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7915-6525.glb",
+     "sha256": "4d1697447dc55fce707bb216f693f205f70dab68d55b7a56e2d4439c1a1bb9d7",
+     "bytes": 46048
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7912-6526.glb",
+     "sha256": "9b55f2a5448610fd678af9e863f8eef791b961ca7b1608a751207a08eef1b18c",
+     "bytes": 46740
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7913-6526.glb",
+     "sha256": "b1f8229b1beded92e745e45ef189c202cb3c07ae6e79e0670f15f4de49e91d34",
+     "bytes": 34412
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7912-6527.glb",
+     "sha256": "d147d97570ba26f98fa2539e2c20f880b84fd39ecae53541c6a514d4ac038c84",
+     "bytes": 46788
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7913-6527.glb",
+     "sha256": "5e94de422d6743d5ebaae4a4093d4d85c37807dd1e6676ccad26329f7361b759",
+     "bytes": 32620
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7916-6524.glb",
+     "sha256": "db8c7d77d2a2851dbf3635de51e5a0c83ab09b694c27155b87a01f1cd5a66023",
+     "bytes": 32276
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7916-6525.glb",
+     "sha256": "bcc1ac60c43f673815ab2d25b1d63d8a4ed6dd1d8d34d74fcafe29906e7d5119",
+     "bytes": 38124
+    },
+    {
+     "path": "docklandia:data/ie/dublin/tiles/13-7912-6528.glb",
+     "sha256": "4dfec3e5e1535bc9b29363b4f022a209de85915f25bdf52af9ba0c246944a2f6",
+     "bytes": 44064
+    },
+    {
+     "path": "docklandia:data/ie/dublin/provenance/far-outlines-counts.json",
+     "sha256": "bf1d8082f45af72f89d5543efef3575b9925fc7fb76da198843867809deef943",
+     "bytes": 125
+    }
+   ],
+   "ms": 449,
+   "at": "2026-10-23T16:05:08.537Z"
   }
  ],
  "height_sources": {

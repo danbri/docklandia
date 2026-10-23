@@ -8,7 +8,7 @@ Owner, 2026-10-22, about buildings for the whole UK: "can we pick a lite subset 
 ## What it is
 
 - Scope: the United Kingdom outside Greater London. Greater London is its own place (kind "blocks", every building; its README: https://github.com/danbri/londat/blob/main/cwplans/docklands/data/places/london/README.md ): a building whose centroid is in the ONS region E12000007 polygon of the UK skeleton is drawn by London only, the same polygon and the same centroid rule as London's build, so no building is drawn twice. Every other building belongs to the first part (English regions, then Wales, Scotland, Northern Ireland; ONS BGC polygons of the UK skeleton) whose polygon holds its centroid; a building outside every polygon (the generalised coast; the edges of two ONS products at the Welsh and Scottish borders) goes to the nearest part within 250 m, never inside the Republic of Ireland (Natural Earth).
-- Three ways a building is drawn: (a) **landmarks**, each with its outline (simplified at 1.5 m), its own id (`_FEATURE_ID_0` = row of features.json) and a card, and as an oriented box with the same card at the coarse levels where it is tall or big enough; (b) at the leaves, **every other building** (OpenStreetMap and Microsoft footprints, 20 m2 or more) as **its own box at its true position** (centroid): its footprint area, the orientation and the long / short ratio of its minimum rotated rectangle, its height; no outline and no id (a tap gives its card: footprint source, height and its source); (c) at the coarse levels the **far forms** (place-lite-tiles 5, issue #13, owner 2026-10-23: "towns from 20 km read as towns, not tiles"): real buildings and **street blocks** at their true positions, no squares. Adjacent buildings of one leaf cell (oriented boxes within 5 m, heights within max(3 m, 35 %)) are one block: one oriented box at their grain, its footprint the sum of theirs, its height their area-weighted mean (cut in two while they fill less than 40 % of it); a level draws the blocks whose seen size sqrt(area) x max(sqrt(area), height) is at least its min_m2, about one device pixel squared at the far end of the level's range on a phone; smaller ones are left to the nearer levels (counted). Landmarks join as their own boxes.
+- Three ways a building is drawn: (a) **landmarks**, each with its outline (simplified at 1.5 m), its own id (`_FEATURE_ID_0` = row of features.json) and a card, and as an oriented box with the same card at the coarse levels where it is tall or big enough; (b) at the leaves, **every other building** (OpenStreetMap and Microsoft footprints, 20 m2 or more) as **its own box at its true position** (centroid): its footprint area, the orientation and the long / short ratio of its minimum rotated rectangle, its height; no outline and no id (a tap gives its card: footprint source, height and its source); (c) at the coarse levels the **far forms** (place-lite-tiles 5, issue #13, owner 2026-10-23: "towns from 20 km read as towns, not tiles"): real buildings and **street blocks** at their true positions, no squares. Adjacent buildings of one leaf cell (oriented boxes within 5 m, heights within max(3 m, 35 %)) are one block: one oriented box at their grain, its footprint the sum of theirs, its height their area-weighted mean (cut in two while they fill less than 70 % of it); a level draws the blocks whose seen size sqrt(area) x max(sqrt(area), height) is at least its min_m2, about one device pixel squared at the far end of the level's range on a phone; smaller ones are left to the nearer levels (counted). Landmarks join as their own boxes.
 - Leaves (level 11, about 9.8 x 5.6 km at 55 N; drawn within about 5 km of the eye on a phone screen): one box a building. Coarse levels: level 7 blocks of seen size 11,400 m2 or more (landmarks of 150 m or 150,000 m2 and more as boxes; geometricError 2560 m); level 8 blocks of seen size 2,850 m2 or more (landmarks of 90 m or 60,000 m2 and more as boxes; geometricError 1280 m); level 9 blocks of seen size 712 m2 or more (landmarks of 60 m or 25,000 m2 and more as boxes; geometricError 640 m); level 10 blocks of seen size 178 m2 or more (landmarks of 40 m or 10,000 m2 and more as boxes; geometricError 160 m). REPLACE refinement, quadtree of the cells with buildings; levels 9 to 11 are in external tile sets (`tilesets/<level 8 cell>.json`), so the root tileset.json stays small and the whole UK loads from far (the reader loads the place within 1200 km of its centre).
 - Compact boxes (layout `cwplans-boxes-1`, glb `extras.blocks.compact`: one buffer view of 8 bytes a box and one of the ground grid): int16 east and north in the tile frame, one byte each for the footprint area (log scale), the height (0.25 m steps to 50 m, then 5 m), the angle of the long side and the flags (aspect, footprint class, height source). The buildings' boxes and the merged squares use it; the landmarks' outlines and boxes are plain glTF (KHR_mesh_quantization, EXT_mesh_gpu_instancing). The reader (docklands/globe/places.js) turns the compact boxes into instances of the unit box.
 - No ground of its own: the blocks stand on the globe's ground (world-base heights, Copernicus GLO-90, where it has tiles, else the globe's world terrain texture) plus the EGM96 geoid, sampled on a 17 x 17 grid a tile; bases 8 m deep. Tiles hold geometry and attributes only, no texture and no baked light (Architecture rule 6).
@@ -72,24 +72,24 @@ Counts: a landmark by the rule but no height (OSM or Wikidata): not drawn 3,581;
 
 | path | what | files | bytes | SHA-256 |
 |---|---|---|---|---|
-| tileset.json | the root: levels 7 and 8, ENU transforms relative to the parent, region bounding volumes, geometric errors; the level-8 tiles refer to their external tile sets | 1 | 97350 | `bf961a43811e86a69366ac28df13bac1b43c585cae49fa528b7565569b470631` |
-| tilesets/ | one external tileset per level-8 cell (levels 9 to 11; content URIs relative to it) | 133 | 2787864 | `34b3a573e75ceb270c31e064fe1455da12200f101789a4bcddabcb16f221fa96` (list of names and SHA-256) |
-| tiles/ | glTF 2.0 tiles: landmark outlines with COLOR_0 and _FEATURE_ID_0 (EXT_mesh_features), landmark boxes as EXT_mesh_gpu_instancing instances of one unit box, KHR_mesh_quantization; the buildings' boxes (leaves) and the merged squares (coarse levels) in the compact layout cwplans-boxes-1 (extras.blocks.compact); glb extras.blocks: class, height (dm), height source, landmark row (boxes.f), landmark rows drawn as outlines (named), buildings the merged squares stand for | 7055 | 306511548 | `d2ba7724b7c5f758363e9bc2fd2309fda453eea48fe4953033a4306f728cdf76` (list of names and SHA-256) |
+| tileset.json | the root: levels 7 and 8, ENU transforms relative to the parent, region bounding volumes, geometric errors; the level-8 tiles refer to their external tile sets | 1 | 97348 | `5f2e29078c6f8ad59f601de96520727c31b9cb02570f36ab76d3c4bb1e0a57e9` |
+| tilesets/ | one external tileset per level-8 cell (levels 9 to 11; content URIs relative to it) | 133 | 2787863 | `a565a3ca7b559202d8e4268dacf09d3703c885ec5210058308ba3f26c82b1729` (list of names and SHA-256) |
+| tiles/ | glTF 2.0 tiles: landmark outlines with COLOR_0 and _FEATURE_ID_0 (EXT_mesh_features), landmark boxes as EXT_mesh_gpu_instancing instances of one unit box, KHR_mesh_quantization; the buildings' boxes (leaves) and the merged squares (coarse levels) in the compact layout cwplans-boxes-1 (extras.blocks.compact); glb extras.blocks: class, height (dm), height source, landmark row (boxes.f), landmark rows drawn as outlines (named), buildings the merged squares stand for | 7055 | 304319540 | `4cde279f6fcfcea56a15f44d03a9de105961072a299563db2b8f33f026d93eb3` (list of names and SHA-256) |
 | features/ | the landmarks, one shard a part (rows offset .. offset + count - 1 of the tiles' feature ids): OSM id, name, kind, position, height and its source, leaf tile, ground, Wikidata, the rule that made it a landmark, Wikipedia; read by the page for the parts in view | 11 | 10954315 | `e5954d95c3e5f01bd28fdd8971fe8528f04d0fc76e60dd2b8cc118867bc431b6` (list of names and SHA-256) |
-| features.json | the text and machine interface of the set: the parts and their shards, the landmark rule, sizes by level and class, the credit | 1 | 9602 | `1f7a862ba2510b1b2fcab0ca6c72da6eea301f8e41e246e644b3eb9d7dac574d` |
+| features.json | the text and machine interface of the set: the parts and their shards, the landmark rule, sizes by level and class, the credit | 1 | 9727 | `493358320c8c7608235394e095a1ca9c9deee0c76abc4ba1e58931c1006d37a1` |
 | names.json | the named landmarks for search (name, position, row); read on the first search | 1 | 2792804 | `95ae175c4a3e627cec6516961feee4bc1c43d7147b34cb7efec4ad0ad3262796` |
-| provenance/log.json | fetch records and dataflow activities (inputs and outputs by SHA-256), counts per part | 1 | 1418734 | `b17820f435dbfbe03e0ec696457a90696b68b03c2a621fba3d11ccdd9ad3e17e` |
+| provenance/log.json | fetch records and dataflow activities (inputs and outputs by SHA-256), counts per part | 1 | 1419119 | `1313d6d1d5f4b5ead716a32d0204c2169b915a4614dfb6cbd7f5a4bca3a0b62f` |
 
-Total 324.57 MB (README.md not counted). Tiles by class (attributed: landmark outline vertices and indices, and 36 bytes for each landmark box; the rest is the mass): landmarks 54.84 MB, other buildings (their own boxes at the leaves, far blocks at the coarse levels) 251.67 MB.
+Total 322.38 MB (README.md not counted). Tiles by class (attributed: landmark outline vertices and indices, and 36 bytes for each landmark box; the rest is the mass): landmarks 57.49 MB, other buildings (their own boxes at the leaves, far blocks at the coarse levels) 246.83 MB.
 
 ### By level
 
 | level | tiles | MB | triangles | landmark outlines | landmark boxes | buildings as their own boxes | far blocks (buildings they stand for) |
 |---|---|---|---|---|---|---|---|
-| 7 | 47 | 0.19 | 69,830 | 0 | 100 | 0 | 6,883 (16,528) |
-| 8 | 133 | 0.98 | 727,690 | 0 | 534 | 0 | 72,235 (253,479) |
-| 9 | 415 | 6.88 | 6,986,590 | 0 | 2,037 | 0 | 696,622 (3,218,679) |
-| 10 | 1,429 | 45.20 | 51,062,350 | 0 | 5,831 | 0 | 5,100,404 (14,573,864) |
+| 7 | 47 | 0.21 | 67,292 | 0 | 94 | 0 | 6,559 (10,406) |
+| 8 | 133 | 1.10 | 649,020 | 0 | 472 | 0 | 63,687 (111,381) |
+| 9 | 415 | 6.12 | 5,112,293 | 0 | 1,673 | 0 | 506,577 (1,159,548) |
+| 10 | 1,429 | 43.63 | 46,482,769 | 0 | 4,701 | 0 | 4,635,327 (9,044,199) |
 | 11 | 5,031 | 253.27 | 228,978,705 | 85,902 | 0 | 22,661,675 | 0 (0) |
 
 ### By part (region)
@@ -98,17 +98,17 @@ Tile bytes are shared out by the built area of each part under a tile (a tile on
 
 | part | code | records read | buildings drawn: landmarks | in the mass (of them Microsoft) | heights: OSM, Microsoft, other Overture, GHSL, default | tile MB (landmarks) |
 |---|---|---|---|---|---|---|
-| North East | E12000001 | 1,025,031 | 3,828 | 909,454 (301,552) | 27,755, 372,312, 0, 496,196, 17,019 | 12.3 (2.3) |
-| North West | E12000002 | 3,207,185 | 6,992 | 2,467,964 (835,946) | 222,802, 1,085,052, 0, 1,124,929, 42,173 | 31.4 (5.1) |
-| Yorkshire and The Humber | E12000003 | 3,463,544 | 7,104 | 2,100,499 (638,076) | 89,332, 821,670, 0, 1,156,091, 40,510 | 27.0 (4.8) |
-| East Midlands | E12000004 | 4,798,223 | 5,717 | 1,993,225 (849,359) | 64,252, 1,125,344, 0, 770,834, 38,512 | 25.5 (4.1) |
-| West Midlands | E12000005 | 3,568,972 | 6,349 | 2,021,963 (569,949) | 175,531, 1,098,182, 0, 717,318, 37,281 | 26.2 (4.7) |
-| East of England | E12000006 | 4,348,373 | 9,981 | 2,526,335 (806,934) | 101,126, 1,341,594, 0, 1,044,947, 48,649 | 33.6 (6.7) |
-| South East | E12000008 | 7,241,755 | 13,041 | 3,222,655 (979,916) | 221,161, 1,750,679, 0, 1,198,523, 65,333 | 43.2 (8.7) |
-| South West | E12000009 | 4,048,105 | 14,763 | 2,562,293 (742,829) | 360,885, 1,222,212, 0, 946,209, 47,750 | 36.4 (8.4) |
-| Wales | W92000004 | 2,322,280 | 5,161 | 1,436,795 (650,721) | 45,140, 694,700, 0, 677,680, 24,436 | 19.7 (3.2) |
-| Scotland | S92000003 | 4,063,687 | 8,909 | 2,261,777 (339,096) | 222,634, 963,540, 0, 1,009,152, 75,360 | 37.0 (6.0) |
-| Northern Ireland | N92000002 | 1,511,014 | 939 | 1,158,715 (266,213) | 26,102, 330,952, 0, 740,246, 62,354 | 14.0 (1.0) |
+| North East | E12000001 | 1,025,031 | 3,828 | 909,454 (301,552) | 27,755, 372,312, 0, 496,196, 17,019 | 12.3 (2.4) |
+| North West | E12000002 | 3,207,185 | 6,992 | 2,467,964 (835,946) | 222,802, 1,085,052, 0, 1,124,929, 42,173 | 31.2 (5.4) |
+| Yorkshire and The Humber | E12000003 | 3,463,544 | 7,104 | 2,100,499 (638,076) | 89,332, 821,670, 0, 1,156,091, 40,510 | 26.8 (5.1) |
+| East Midlands | E12000004 | 4,798,223 | 5,717 | 1,993,225 (849,359) | 64,252, 1,125,344, 0, 770,834, 38,512 | 25.1 (4.3) |
+| West Midlands | E12000005 | 3,568,972 | 6,349 | 2,021,963 (569,949) | 175,531, 1,098,182, 0, 717,318, 37,281 | 26.2 (5.0) |
+| East of England | E12000006 | 4,348,373 | 9,981 | 2,526,335 (806,934) | 101,126, 1,341,594, 0, 1,044,947, 48,649 | 33.3 (6.9) |
+| South East | E12000008 | 7,241,755 | 13,041 | 3,222,655 (979,916) | 221,161, 1,750,679, 0, 1,198,523, 65,333 | 42.9 (9.1) |
+| South West | E12000009 | 4,048,105 | 14,763 | 2,562,293 (742,829) | 360,885, 1,222,212, 0, 946,209, 47,750 | 36.0 (8.6) |
+| Wales | W92000004 | 2,322,280 | 5,161 | 1,436,795 (650,721) | 45,140, 694,700, 0, 677,680, 24,436 | 19.6 (3.4) |
+| Scotland | S92000003 | 4,063,687 | 8,909 | 2,261,777 (339,096) | 222,634, 963,540, 0, 1,009,152, 75,360 | 37.0 (6.3) |
+| Northern Ireland | N92000002 | 1,511,014 | 939 | 1,158,715 (266,213) | 26,102, 330,952, 0, 740,246, 62,354 | 13.9 (1.1) |
 
 What each part left out or took by a rule (counts of place-lite-select):
 
@@ -652,7 +652,7 @@ Outputs:
 
 Parameters: `{"rule":{"rise_m":3,"rise_share":0.15,"max_parts":64,"max_wd_m":330,"spire_share":0.35,"tower_share":0.2,"tower_min_m":4,"tower_max_m":15,"cap_share":0.25,"cap_max_m":8}}`
 
-### place-lite-tiles version 6 (activity `0ed542dcc9f30617`, 2026-10-23T12:27:48.063Z)
+### place-lite-tiles version 7 (activity `407226549b64346a`, 2026-10-23T16:09:26.873Z)
 
 Skill docklands-3d-page; tool tools/build-place-tiles.mjs.
 
@@ -689,12 +689,12 @@ Inputs:
 Outputs:
 
 - `docklandia:data/gb/uk-lite/tiles/11-1950-1681.glb` SHA-256 `b8deec29e60cfb419f938e8a667b035c734dcb63c7b38803542d13c34ced63d2` (5088 bytes)
-- `docklandia:data/gb/uk-lite/tiles/10-975-840.glb` SHA-256 `46e86cf80be7417a9920569e5ce5202a6c4e88daa7ddd618d221453469186a26` (2504 bytes)
-- `docklandia:data/gb/uk-lite/tiles/9-487-420.glb` SHA-256 `04384ec2dd0e5cca84ece6e4eed3f3118dc6bde2a5e53f8a20390b998144e67e` (2476 bytes)
+- `docklandia:data/gb/uk-lite/tiles/10-975-840.glb` SHA-256 `cc5301e42d801bc246c350aeaae49a09e144cec8bf666f23d464d364bac266e7` (2512 bytes)
+- `docklandia:data/gb/uk-lite/tiles/9-487-420.glb` SHA-256 `2a2fc90c3135cf6dcbe90248a56e6396df92dc7065558bd92bf2449f1eac50b9` (2464 bytes)
 - `docklandia:data/gb/uk-lite/tiles/8-243-210.glb` SHA-256 `7afc49e70bd65f778d6b65452144690a57d12fd35b09b8730907ffb2b7f5228a` (1084 bytes)
 - and 7,198 more (tiles and tile sets: the Files table above)
 
-Parameters: `{"top":7,"leaf":11,"levels":{"7":{"tall_m":150,"big_m2":150000,"merge_m":1600,"err_m":2560},"8":{"tall_m":90,"big_m2":60000,"merge_m":800,"err_m":1280},"9":{"tall_m":60,"big_m2":25000,"merge_m":400,"err_m":640},"10":{"tall_m":40,"big_m2":10000,"merge_m":200,"err_m":160}},"leafRule":{"town_m":200,"rural_m":400,"town_share":0.08,"simplify_m":1.5},"full_share":0.5,"drop_m":8,"external_from":9,"colour":"#d6cbb6","version_label":"uk-lite-3","grid_n":17,"far":{"gap_m":5,"fill_min":0.4,"h_rel":0.35,"h_abs_m":3,"min_m2":{"7":11400,"8":2850,"9":712,"10":178}},"classes":["landmark (OpenStreetMap)","merged buildings (OpenStreetMap and Microsoft)","OpenStreetMap","Microsoft ML Buildings"],"credit":"© OpenStreetMap contributors (ODbL 1.0); Landmark tags: OpenStreetMap via the QLever OSM endpoint (planet 2026-09-21); Buildings: OpenStreetMap data and Microsoft ML Buildings footprints via Overture Maps © Overture Maps Foundation, © Microsoft (ODbL 1.0); Building heights and floors from Overture Maps buildings © Overture Maps Foundation (ODbL 1.0; includes data © Microsoft, © OpenStreetMap contributors and others per record); Building heights from Microsoft Global ML Building Footprints © Microsoft (ODbL 1.0); Building heights (where OSM has none) from GHS-BUILT-H R2023A © European Union, 1995-2026, JRC (CC BY 4.0); Ground: Copernicus DEM GLO-90 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and ESA (the globe's world-base `
+Parameters: `{"top":7,"leaf":11,"levels":{"7":{"tall_m":150,"big_m2":150000,"merge_m":1600,"err_m":2560},"8":{"tall_m":90,"big_m2":60000,"merge_m":800,"err_m":1280},"9":{"tall_m":60,"big_m2":25000,"merge_m":400,"err_m":640},"10":{"tall_m":40,"big_m2":10000,"merge_m":200,"err_m":160}},"leafRule":{"town_m":200,"rural_m":400,"town_share":0.08,"simplify_m":1.5},"full_share":0.5,"drop_m":8,"external_from":9,"colour":"#d6cbb6","version_label":"uk-lite-3","grid_n":17,"far":{"gap_m":5,"fill_min":0.7,"h_rel":0.35,"h_abs_m":3,"box_fill":0.7,"simplify_m":4,"min_m2":{"7":11400,"8":2850,"9":712,"10":178}},"classes":["landmark (OpenStreetMap)","merged buildings (OpenStreetMap and Microsoft)","OpenStreetMap","Microsoft ML Buildings"],"credit":"© OpenStreetMap contributors (ODbL 1.0); Landmark tags: OpenStreetMap via the QLever OSM endpoint (planet 2026-09-21); Buildings: OpenStreetMap data and Microsoft ML Buildings footprints via Overture Maps © Overture Maps Foundation, © Microsoft (ODbL 1.0); Building heights and floors from Overture Maps buildings © Overture Maps Foundation (ODbL 1.0; includes data © Microsoft, © OpenStreetMap contributors and others per record); Building heights from Microsoft Global ML Building Footprints © Microsoft (ODbL 1.0); Building heights (where OSM has none) from GHS-BUILT-H R2023A © European Union, 1995-2026, JRC (CC BY 4.0); Ground: Copernicus DEM GLO-90 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union an`
 
 ## What is derived from what
 

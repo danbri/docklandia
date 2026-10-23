@@ -4876,6 +4876,515 @@
    ],
    "ms": 11,
    "at": "2026-10-23T11:09:46.042Z"
+  },
+  {
+   "activity": "cb57397179de9493",
+   "operation": "place-far-outlines",
+   "version": 1,
+   "skill": "docklands-3d-page",
+   "tool": "tools/build-place-tiles.mjs",
+   "inputs": [
+    {
+     "label": "tileset",
+     "path": "docklandia:data/de/stuttgart/tileset.json",
+     "sha256": "75bb2578e3ccb26e056b453aeb1e3d7c0813d9618fca94b2a5e459eb10ee61e9"
+    },
+    {
+     "label": "tiles of levels 13 and 14 (sha256 of the list of path and sha256 of each)",
+     "path": "docklandia:data/de/stuttgart/tiles/",
+     "sha256": "c5737808fadba12be80c559c9dd34f1a63efed2773674fe5996e5611c5f045f3"
+    }
+   ],
+   "params": {
+    "far_box_fill": 0.7,
+    "margin_m": 2,
+    "level": 13,
+    "rule": "a level-13 box whose building (the level-14 outline of the same height whose centroid is within the box plus 2 m) fills less than far_box_fill of it is replaced by that outline"
+   },
+   "outputs": [
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8603-6315.glb",
+     "sha256": "8ea5f31b6b87ce5ffc57d34babe6c960fb02c3367dea924edcf2271605e06520",
+     "bytes": 34996
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8604-6312.glb",
+     "sha256": "1b60a2872d88434ab7b6d515d4bcee69f9a1bd57162565401268e32d67702199",
+     "bytes": 31956
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8604-6313.glb",
+     "sha256": "668a33a74a7db604ee9ca029cad0f944ae83eff6d3e8e9d26acb357d0f57fd21",
+     "bytes": 34268
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8605-6313.glb",
+     "sha256": "66f953ae63810aced097f32a48e5af9dd70becc836ecfe7fb56725f344de4339",
+     "bytes": 51984
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8606-6312.glb",
+     "sha256": "f842a20d6dc07c4b8dfe1fb5f97f482d4bc6956c4df2218441be535cc4947c62",
+     "bytes": 36964
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8607-6312.glb",
+     "sha256": "4001cf6335004e818e5dc78c1b7878a30c55ba95c35eb3ba02beb3acf4c49d3f",
+     "bytes": 50732
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8606-6313.glb",
+     "sha256": "cf52bb2b09561b0536da8e0338cd7c5cc0ba9c33ea06178e3a4be887bb991511",
+     "bytes": 78540
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8607-6313.glb",
+     "sha256": "452b317c9d818241a5ac0cd6468e495f06a188f93bd0c10074222d532e9bde82",
+     "bytes": 87344
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8605-6314.glb",
+     "sha256": "24a3d31fc6bce3be814f642f878e18966f2c36dfbaace465a61ba591ca2f32ba",
+     "bytes": 51484
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8606-6314.glb",
+     "sha256": "fac69525ba6fb54bcca3c31080a9e60f2295d4be12b4f964df8119534c0aa1bf",
+     "bytes": 82784
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8607-6314.glb",
+     "sha256": "3683fc11a50c9abae64c91c5efb5ad882742ee2a86f3edc3222306035c0abdc9",
+     "bytes": 42340
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8606-6315.glb",
+     "sha256": "8d75ebb077d7c844c66a0324f1edb82881c81ed280cc495ca9d370976b00dc8e",
+     "bytes": 31484
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8607-6315.glb",
+     "sha256": "a8e056340b5c44143311127c5f492f7400ef2103ed9d0e45171fa427c4275a3d",
+     "bytes": 50024
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8603-6316.glb",
+     "sha256": "8a4f2f456ebba25a40a0b9dc495d6a2c91441b02c39c059a7953d40709cfcd37",
+     "bytes": 38028
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8603-6317.glb",
+     "sha256": "a68697e92d6cd99754257a317ce32c4074e88f2fd36b3475076be5693c0f7c77",
+     "bytes": 38760
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8603-6318.glb",
+     "sha256": "0ee1d8920562c0512f8fab86a3416a097354b4724a85ac959bf7a5b2ef793b4f",
+     "bytes": 40492
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8603-6319.glb",
+     "sha256": "09b9724f42d90cfa8fca08e89c7bdbe6f9c2979df96d583fde90843bb17efd07",
+     "bytes": 41808
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8604-6316.glb",
+     "sha256": "9a822e25d68801932bae2453b697bb8d19ff3453a34bfc3cb4159625e3d43752",
+     "bytes": 52836
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8605-6316.glb",
+     "sha256": "600f03728194505462b48b1fd81c05e99da9b3363c8c59704e5c730516e76bd1",
+     "bytes": 41532
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8604-6317.glb",
+     "sha256": "5a30fe54acdfbad9f0c18e85b14bd8b29c1afa1776757c688e7883749ff81a3e",
+     "bytes": 68228
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8605-6317.glb",
+     "sha256": "3e5439d8ba1c667a42e00392b567867b486cd281286c20453cd66090f4e9daf7",
+     "bytes": 66772
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8606-6316.glb",
+     "sha256": "bac9598476d51d3c7c8b79c5ea58d68d86d644f116c839bd0c56fefd91f82cb6",
+     "bytes": 30508
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8607-6316.glb",
+     "sha256": "0061c6df4977608487e8cbef4281aa960d497e02ebb7c4e83c644f8cea75248f",
+     "bytes": 52604
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8606-6317.glb",
+     "sha256": "a5fc0a7dfe746032070dd16b8e44b4a54e88b4d3a4b4391f9aec19ed3bb99c92",
+     "bytes": 62156
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8607-6317.glb",
+     "sha256": "8d45e261f92c0023cb0c198004905574884206fa9979944b54d0f0631ed7a270",
+     "bytes": 51572
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8604-6318.glb",
+     "sha256": "ee56f8dc7901c2ea8331e0dbc1ee8bf21a28d73107993bd1fb173ce9b2d8eb3e",
+     "bytes": 58024
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8605-6318.glb",
+     "sha256": "80c6e841d2dfd7aee9a9760d946d4f13d51020d2b21c7c07bce9fbfb0abf416b",
+     "bytes": 38768
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8604-6319.glb",
+     "sha256": "fb24ad6aece208caba3bbb37d7cdde02048d39c2c09d1cce4ed57233208417c3",
+     "bytes": 35568
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8605-6319.glb",
+     "sha256": "0247ed10f15c178eb3c20532b2eea6849feefd005e0598928ecc3ac404be9417",
+     "bytes": 44032
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8606-6318.glb",
+     "sha256": "299e6cf72d69dbb640060ae08cd8c4ac49bef68d8b9ce3df107c75d061531cb6",
+     "bytes": 51016
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8607-6318.glb",
+     "sha256": "6bdc53cdd6f5003e7efb176feaffca4d44ac86f937e7655198d62a814468e839",
+     "bytes": 61984
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8606-6319.glb",
+     "sha256": "76b2b911d65b1ac775250fb0c724c6df10e164894d8daceda1e2488e9738ba8a",
+     "bytes": 48124
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8607-6319.glb",
+     "sha256": "e5661f113169a29f565e4506ef6b8ad8cf0e5f746432c5226bb7b862b1145a8f",
+     "bytes": 43320
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8608-6312.glb",
+     "sha256": "48f3482d79a28acda729bc53a456e8079fd0aaaaab108a24def737397d05c2ca",
+     "bytes": 69192
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8609-6312.glb",
+     "sha256": "d531135f0d5863089a9cab6548c4f76c7e747b79623ebdcdaf2580d2191f2dfc",
+     "bytes": 68788
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8608-6313.glb",
+     "sha256": "75310a859868ecbccb6a5cef2645af05d51f98e6dbefb0014291010607373735",
+     "bytes": 64940
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8609-6313.glb",
+     "sha256": "8d0de14c69b8c73ec6c0938decf35268bb5e16ede2a58eefbe66ce17a7892b74",
+     "bytes": 60512
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8610-6312.glb",
+     "sha256": "c4ef489332c901e0999b69c0951e420bdce1b32850916f58eff84d616e7a463d",
+     "bytes": 50940
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8611-6312.glb",
+     "sha256": "90e7cc79452833826b283c57f06034cd142da28d5e0c4c6a5c074211743449e1",
+     "bytes": 54236
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8610-6313.glb",
+     "sha256": "97f118849f140e0dd13d95ec38ed391af4408364f9ef86fe9f5de8327d96d051",
+     "bytes": 50044
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8611-6313.glb",
+     "sha256": "5d9d882bbd63d4f310fa9f6ee1f6ce6a7e4197efe907b2303da68bdb91a87503",
+     "bytes": 50428
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8608-6314.glb",
+     "sha256": "2622cdc15f285f166d176651bc5517d1b0f19025b4fcb7925415fb4d468e60d5",
+     "bytes": 47812
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8609-6314.glb",
+     "sha256": "26dfee5402547072632c779b50603b6bd50804a3263466c193aecafd462e1674",
+     "bytes": 63928
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8608-6315.glb",
+     "sha256": "c26c27322fc96be9506c5591bb93cebc53b4aac59d2022857bbdc0f44b0ac576",
+     "bytes": 121948
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8609-6315.glb",
+     "sha256": "2f43b8e305968d78dca60d8a9544572d32a8245a4a2decc922a3627abe371c4f",
+     "bytes": 234724
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8610-6314.glb",
+     "sha256": "037a0f42bd4d895b824cdbadda9d6e8db90b6e024ec6b871b774b781bbda0035",
+     "bytes": 40844
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8611-6314.glb",
+     "sha256": "c195be4eccf6a86b8eb5d2c35cdca311505f88b382ea41bc132ed91f43db734e",
+     "bytes": 50532
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8610-6315.glb",
+     "sha256": "ddb8ed44eb7b8a6a7b7d4607cba93e4626ccea8a533c62e95fdf72bfa069e4a9",
+     "bytes": 81280
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8612-6312.glb",
+     "sha256": "57a3dd65381511ff1a210db8ca70cf6a10bf885eb918daebc3c73b1043f4c12b",
+     "bytes": 38108
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8613-6312.glb",
+     "sha256": "c3c31cdebe5f4c6d3fe44c2a3a0615442e9953caf1be3930081a0f7912d67e4f",
+     "bytes": 41576
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8612-6313.glb",
+     "sha256": "0a237602f9da6deee895350d3c5fa72104ef7c9c4a10319b1b55db4d28c1341a",
+     "bytes": 47128
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8613-6313.glb",
+     "sha256": "90acb2403c96de3bbafe6eda89766e59dd599dc0fd83a6b33fa17d1c3752bb6c",
+     "bytes": 55452
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8614-6312.glb",
+     "sha256": "6c2ecb4e2a8a1273825cb69b83008cc6c9980c957cc1bdb619e2fb924b6415d5",
+     "bytes": 41396
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8615-6312.glb",
+     "sha256": "5694be5df0ba9f1c537f9ff0a17f11c3479b297c815da3cbf50cab2bc0245bf9",
+     "bytes": 52616
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8614-6313.glb",
+     "sha256": "f150cb33da745af78148e6e03838ab811618dec3c620b4fc20b30a40d9dd41cd",
+     "bytes": 46236
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8615-6313.glb",
+     "sha256": "5d21c426b275d1b7f038fe1fdde456466f994ff7a68d3a81f07241af04645e56",
+     "bytes": 56072
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8612-6314.glb",
+     "sha256": "cadd3573c447177539a57d53fd8016b6c62bc561bb9d5e9c4bae6da8615fe78e",
+     "bytes": 43316
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8613-6314.glb",
+     "sha256": "39db9c9443ecfc5587e7ad54da961e42a047bdf78f0cc4a38886707e001e15e5",
+     "bytes": 55960
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8612-6315.glb",
+     "sha256": "f7119c69fc6793973e3acb9d5ae47f8103864673216ef2ddeec41d58590db8ac",
+     "bytes": 53272
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8613-6315.glb",
+     "sha256": "cbcbe9568809b6df6dd97ad1dddff5fa5dfa65fd483fa14c41ca9b9abd7e0e4e",
+     "bytes": 65720
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8614-6314.glb",
+     "sha256": "236a4b4441fe7fe1053622d37dea025281fc73049ab7d6347136da237a2af714",
+     "bytes": 57936
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8615-6314.glb",
+     "sha256": "71a244bd6b3cdfcfe12a9ea49761ec0cf80a299a01e3571de44383320b701463",
+     "bytes": 87668
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8614-6315.glb",
+     "sha256": "37ed44c87d754a0241a0be7e64eeaa0570bbc2674c3e577ac761c48fba4172d8",
+     "bytes": 45120
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8615-6315.glb",
+     "sha256": "2a0fe0c8f82e4da319e0bdc2e1106fbfceed2c50253c583ee686ca9ade653bee",
+     "bytes": 36400
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8608-6316.glb",
+     "sha256": "f9c047a4faff44cfa4e270e1e197fe7a05c90b4a04032602b21da8089ec6fb67",
+     "bytes": 55872
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8609-6316.glb",
+     "sha256": "d2bcea03c3dfe2a3f87c93385c4548669d98c37d119b44cd8898814d59d4d5cf",
+     "bytes": 119416
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8608-6317.glb",
+     "sha256": "875f134303393893c10a05124bc426858dbd4cfc5478eb44cfbc792bd42383c9",
+     "bytes": 62444
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8609-6317.glb",
+     "sha256": "dc84e72b95eab0ec07acf4e643f79031b216deec5173c997c366c8a8c90b2f11",
+     "bytes": 112304
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8610-6316.glb",
+     "sha256": "63935cd59534aeb06f9fcf0b089fbc9586896e832c1b3c449c0801bce8dd1d11",
+     "bytes": 129944
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8611-6316.glb",
+     "sha256": "825805ae5e41f0c8361a365fc28d80aa718c8fa60fd1238f5db59f8c6a73bb21",
+     "bytes": 82692
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8610-6317.glb",
+     "sha256": "bf891ba03dda9cccefe36a1ffc416345ddf85662f35c6d520abf93a0dc9aaf0f",
+     "bytes": 78356
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8611-6317.glb",
+     "sha256": "01ecf132608f69f732f9b79daa948159cf19f393123235c039881d39eb85b509",
+     "bytes": 92728
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8608-6318.glb",
+     "sha256": "607d263334211c961d4b83b33bb410fc607dfd34f1595605ebea8b8866e09e30",
+     "bytes": 67824
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8609-6318.glb",
+     "sha256": "73b56dbc62f74b5da066c359cc81a27a4a0b710c825debddfaae7a5ddadce714",
+     "bytes": 74772
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8608-6319.glb",
+     "sha256": "531e82e65157fb894bcdba21ead414d3ff8ad51a39c7df94880ef1440b0128bd",
+     "bytes": 45480
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8609-6319.glb",
+     "sha256": "39431cc0e5c0ab0e76ae8d49cb8dc8268c3eadf5975643571a9eab2831453add",
+     "bytes": 63180
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8610-6318.glb",
+     "sha256": "d6569865ee3ee391cc14848f9b1ff66f8ab28ffdb41d5343c5fd922fdff1f3b2",
+     "bytes": 70880
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8611-6318.glb",
+     "sha256": "eb45ce918ae5559655574baa45d344d39150cb19c9f5cd1c9d07eeb9570fb62f",
+     "bytes": 60272
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8610-6319.glb",
+     "sha256": "eae403fc9cd4a9b1e86174ac88e3e5262353afc5a997b9eda3c64463d1e7cad9",
+     "bytes": 63660
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8611-6319.glb",
+     "sha256": "29ed3bcfd0d3080c26effbd3260bd797cf3c7abb9db51ac071a003047cc110a1",
+     "bytes": 40212
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8612-6316.glb",
+     "sha256": "1cba5c22e832278b5c851b4d16070409691a0bda1e6a264ab976a7a39cf3c296",
+     "bytes": 70652
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8613-6316.glb",
+     "sha256": "fbcfed99396314be3af19e2c9026f556319220a8590b59e95dd5bba13c36e44e",
+     "bytes": 50468
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8612-6317.glb",
+     "sha256": "9298e4cf4d46a85c7758c329dc48c9d8a15a0b68dda9a3cecf74064dd9ee7dcb",
+     "bytes": 63436
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8613-6317.glb",
+     "sha256": "c268ded357ab736699da7ce51be6543a2693f78f75fe24e307f2a1a4f0418f97",
+     "bytes": 71976
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8614-6316.glb",
+     "sha256": "c70e8205e1735e92db527bc14cb850fed59edfbebea2d5d102895d8ad1a31ced",
+     "bytes": 36520
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8614-6317.glb",
+     "sha256": "463e764f347282ad541239c7f2e3207d220e14636e2d84d01a14ef9b66a987a0",
+     "bytes": 72984
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8615-6317.glb",
+     "sha256": "808f0b058a078117367a06aa8745588c4c3ce0db6f72b18a31a31e945f1b652e",
+     "bytes": 55388
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8612-6318.glb",
+     "sha256": "ba78c43c3f9efa73e1ef5329393fd72ab690e085611b5df6572375dedd0ebe83",
+     "bytes": 54928
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8613-6318.glb",
+     "sha256": "a08a76ced8317856aa3e8d50bea1db132e08d9ea8047536f7db45325ac950e96",
+     "bytes": 69832
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8612-6319.glb",
+     "sha256": "8fe6c009fae9f9d8f78ffe40187805c11cf2da881038d6e4b67a852a7e7fec93",
+     "bytes": 49060
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8613-6319.glb",
+     "sha256": "1034fb57116f6390b7203f0412d1afece82406e2a4a3e713438837abef30a8a0",
+     "bytes": 44008
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8614-6318.glb",
+     "sha256": "1e65307f2d4a8f4d11ac0e802c629fd1eb7d7cfd432e612cf83c6ab81abe2c45",
+     "bytes": 43324
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8615-6318.glb",
+     "sha256": "e3a54aca92d939c0603bc3a1f56024b0b63d29fc4dbc36854cc5524cfeeff70a",
+     "bytes": 81184
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8614-6319.glb",
+     "sha256": "a3568e919cc49422d71ae09d229daebe70256d955bfdf0a30ac13fa596be5945",
+     "bytes": 36644
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/tiles/13-8615-6319.glb",
+     "sha256": "1e5de052cd13b760a36f1b48dc7e5dd663e8a9453f8d40ee225c4f3051eb5f87",
+     "bytes": 44808
+    },
+    {
+     "path": "docklandia:data/de/stuttgart/provenance/far-outlines-counts.json",
+     "sha256": "6848e2c5e6e22e54091ff9dd58d762a76f3be088c50ddd530c9ab802f46d3408",
+     "bytes": 124
+    }
+   ],
+   "ms": 255,
+   "at": "2026-10-23T16:05:07.416Z"
   }
  ],
  "height_sources": {
